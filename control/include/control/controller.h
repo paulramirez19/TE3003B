@@ -19,10 +19,7 @@ public:
     void ControllerCallback();
 
 private:
-    enum class ControllerType : std::int32_t {
-        kPosition = 0,
-        kOrientation = 1
-    };
+    enum class ControllerType : std::int32_t { kPosition = 0, kOrientation = 1 };
 
     nav_msgs::msg::Odometry odom_;
     nav_msgs::msg::Odometry path_;

@@ -1,0 +1,6 @@
+/control:
+  ros__parameters:
+    distance_h: 1.0 # meters
+    x_gain: 1.0
+    y_gain: 1.0
+    theta_gain: 1.0

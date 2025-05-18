@@ -97,6 +97,8 @@ void Controller::ControllerCallback() {
     ctrl.linear.y = u(0, 0) * std::sin(theta);
     ctrl.angular.z = u(1, 0);
 
+    RCLCPP_INFO(get_logger(), "linear_velocity: %g, angular_velocity: %g", u(0, 0), u(1, 0));
+
     ctrl_pub_->publish(ctrl);
 }
 
