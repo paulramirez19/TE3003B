@@ -18,7 +18,7 @@ public:
     Odometry();
 
 private:
-    void odometry_callback(const geometry_msgs::msg::Twist& msg);
+    void OdometryCallback(const geometry_msgs::msg::Twist& msg);
 
     double x_pos_{0.0};
     double y_pos_{0.0};
@@ -30,6 +30,6 @@ private:
     std::unique_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
 };
 
-}  // namespace odometry
+} // namespace odometry
 
-#endif  // ODOMETRY_H_
+#endif // ODOMETRY_H_

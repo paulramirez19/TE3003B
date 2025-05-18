@@ -22,14 +22,15 @@ Odometry::Odometry() : Node("odometry") {
     declare_parameter<double>("linear_scale_y", 1.0);
     declare_parameter<bool>("pub_odom_tf", false);
 
-    subscription_ = create_subscription<geometry_msgs::msg::Twist>(
-        "/vel_raw", 50,
-        std::bind(&Odometry::odometry_callback, this, std::placeholders::_1));
+    subscription_ =
+            create_subscription<geometry_msgs::msg::Twist>("/vel_raw", 50,
+                                                           std::bind(&Odometry::OdometryCallback,
+                                                                     this, std::placeholders::_1));
     publisher_ = create_publisher<nav_msgs::msg::Odometry>("/odom_raw", 50);
     tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 }
 
-void Odometry::odometry_callback(const geometry_msgs::msg::Twist& msg) {
+void Odometry::OdometryCallback(const geometry_msgs::msg::Twist& msg) {
     const rclcpp::Time current_time(rclcpp::Clock().now());
 
     const double linear_scale_x = get_parameter("linear_scale_x").as_double();
@@ -42,19 +43,19 @@ void Odometry::odometry_callback(const geometry_msgs::msg::Twist& msg) {
     last_vel_time_ = current_time;
 
     const double delta_heading = angular_velocity_z * vel_dt;
-    const double delta_x = (linear_velocity_x * std::cos(heading_) -
-                            linear_velocity_y * std::sin(heading_)) *
-                           vel_dt;
-    const double delta_y = (linear_velocity_x * std::sin(heading_) +
-                            linear_velocity_y * std::cos(heading_)) *
-                           vel_dt;
+    const double delta_x =
+            (linear_velocity_x * std::cos(heading_) - linear_velocity_y * std::sin(heading_)) *
+            vel_dt;
+    const double delta_y =
+            (linear_velocity_x * std::sin(heading_) + linear_velocity_y * std::cos(heading_)) *
+            vel_dt;
 
     x_pos_ += delta_x;
     y_pos_ += delta_y;
     heading_ += delta_heading;
 
-    RCLCPP_INFO(get_logger(), "t: %g x: %g y: %g heading: %g",
-                current_time.seconds(), x_pos_, y_pos_, heading_);
+    RCLCPP_INFO(get_logger(), "t: %g x: %g y: %g heading: %g", current_time.seconds(), x_pos_,
+                y_pos_, heading_);
 
     tf2::Quaternion quaternion;
     quaternion.setRPY(/*roll=*/0.0, /*pitch=*/0.0, /*yaw=*/heading_);
@@ -81,6 +82,8 @@ void Odometry::odometry_callback(const geometry_msgs::msg::Twist& msg) {
     odom.pose.covariance[7] = 0.001;
     odom.pose.covariance[35] = 0.001;
 
+    RCLCPP_INFO(get_logger(), "x: %g, y: %g, heading: %g", x_pos_, y_pos_, heading_);
+
     // Linear speed from encoders
     odom.twist.twist.linear.x = linear_velocity_x;
     odom.twist.twist.linear.y = linear_velocity_y;
@@ -93,6 +96,11 @@ void Odometry::odometry_callback(const geometry_msgs::msg::Twist& msg) {
     odom.twist.covariance[0] = 0.0001;
     odom.twist.covariance[7] = 0.0001;
     odom.twist.covariance[35] = 0.0001;
+
+    const double linear_velocity = std::sqrt(linear_velocity_x * linear_velocity_x +
+                                             linear_velocity_y * linear_velocity_y);
+    RCLCPP_INFO(get_logger(), "linear_velocity: %g, angular_velocity: %g", linear_velocity,
+                angular_velocity_z);
 
     publisher_->publish(odom);
 
@@ -117,7 +125,7 @@ void Odometry::odometry_callback(const geometry_msgs::msg::Twist& msg) {
     }
 }
 
-}  // namespace odometry
+} // namespace odometry
 
 int main(int argc, char* argv[]) {
     rclcpp::init(argc, argv);
