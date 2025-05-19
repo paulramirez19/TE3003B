@@ -4,36 +4,25 @@
 #include <eigen3/Eigen/Core>
 #include <eigen3/Eigen/Dense>
 
+#include "geometry_msgs/msg/pose_stamped.hpp"
 #include "nav_msgs/msg/odometry.hpp"
 #include "rclcpp/duration.hpp"
 #include "rclcpp/time.hpp"
 #include "tf2/LinearMath/Matrix3x3.h"
 #include "tf2/LinearMath/Quaternion.h"
+#include "tf2/utils.hpp"
 
 namespace sensor_fusion {
 namespace {
 
-constexpr double kH{0.10};  // meters
+constexpr double kH{0.10}; // meters
 
 // clang-format off
-const Eigen::Matrix<double, 3, 3> Q{
-    {0.0, 0.0, 0.0},
-    {0.0, 0.0, 0.0},
-    {0.0, 0.0, 0.0}
-};
-
-const Eigen::Matrix<double, 3, 3> R{
-    {0.0, 0.0, 0.0},
-    {0.0, 0.0, 0.0},
-    {0.0, 0.0, 0.0},
-};
-
 const Eigen::Matrix<double, 3, 3> H{
     {1.0, 0.0, 0.0},
     {0.0, 1.0, 0.0},
     {0.0, 0.0, 1.0}
 };
-
 // clang-format on
 
 Eigen::Matrix<double, 3, 2> B(const Eigen::Matrix<double, 3, 1>& x) {
@@ -57,9 +46,9 @@ Eigen::Matrix<double, 3, 3> F(const Eigen::Matrix<double, 3, 1> x,
     // clang-format on
 }
 
-nav_msgs::msg::Odometry BuildOdometryMessage(
-    const rclcpp::Time& time, const Eigen::Matrix<double, 3, 1>& x,
-    const Eigen::Matrix<double, 3, 3>& P) {
+nav_msgs::msg::Odometry BuildOdometryMessage(const rclcpp::Time& time,
+                                             const Eigen::Matrix<double, 3, 1>& x,
+                                             const Eigen::Matrix<double, 3, 3>& P) {
     nav_msgs::msg::Odometry odom;
 
     odom.header.stamp = time;
@@ -90,34 +79,39 @@ nav_msgs::msg::Odometry BuildOdometryMessage(
     return odom;
 }
 
-Eigen::Matrix<double, 3, 1> ConvertObservationToState(
-    const Observation& observation) {
-    const nav_msgs::msg::Odometry& obser = observation.GetObservation();
-    const tf2::Quaternion quat(
-        obser.pose.pose.orientation.x, obser.pose.pose.orientation.y,
-        obser.pose.pose.orientation.z, obser.pose.pose.orientation.w);
-    const tf2::Matrix3x3 matrix(quat);
-    double roll{};
-    double pitch{};
-    double yaw{};
-    matrix.getRPY(roll, pitch, yaw);
-    return Eigen::Matrix<double, 3, 1>{obser.pose.pose.position.x,
-                                       obser.pose.pose.position.y, yaw};
+Eigen::Matrix<double, 3, 1> ConvertObservationToState(const Observation& observation) {
+    const geometry_msgs::msg::PoseStamped& obser = observation.GetObservation();
+    const tf2::Quaternion quat(obser.pose.orientation.x, obser.pose.orientation.y,
+                               obser.pose.orientation.z, obser.pose.orientation.w);
+    const double yaw = tf2::getYaw<tf2::Quaternion>(quat);
+    return Eigen::Matrix<double, 3, 1>{obser.pose.position.x, obser.pose.position.y, yaw};
 }
 
-}  // namespace
+Eigen::Matrix<double, 3, 3> ConvertVectorToMatrix(const std::vector<double>& vec) {
+    constexpr std::size_t row_size = 3;
+    constexpr std::size_t col_size = 3;
+    Eigen::Matrix<double, 3, 3> matrix;
+    for (std::size_t i = 0; i < row_size; ++i) {
+        for (std::size_t j = 0; j < col_size; ++j) {
+            matrix(i, j) = vec[i * col_size + j];
+        }
+    }
+    return matrix;
+}
+
+} // namespace
 
 ExtendedKalmanFilter::ExtendedKalmanFilter() : prev_time_() {}
 
-nav_msgs::msg::Odometry ExtendedKalmanFilter::Predict(
-    const rclcpp::Time& time, const Eigen::Matrix<double, 2, 1>& control) {
+nav_msgs::msg::Odometry ExtendedKalmanFilter::Predict(const rclcpp::Time& time,
+                                                      const Eigen::Matrix<double, 2, 1>& control) {
     const Eigen::Matrix<double, 3, 1> x_dot = B(prev_state_) * control;
     const double delta_time = (time - prev_time_).seconds();
     const Eigen::Matrix<double, 3, 1> x_pred = prev_state_ + delta_time * x_dot;
 
     // clang-format off
     const Eigen::Matrix<double, 3, 3> covariance_pred =
-        F(prev_state_, control) * prev_covariance_ * (F(prev_state_, control).transpose()) + Q;
+        F(prev_state_, control) * prev_covariance_ * (F(prev_state_, control).transpose()) + Q_;
     // clang-format on
 
     prev_time_ = time;
@@ -126,12 +120,11 @@ nav_msgs::msg::Odometry ExtendedKalmanFilter::Predict(
     return BuildOdometryMessage(time, x_pred, covariance_pred);
 }
 
-nav_msgs::msg::Odometry ExtendedKalmanFilter::Update(
-    const Observation& observation) {
+nav_msgs::msg::Odometry ExtendedKalmanFilter::Update(const Observation& observation) {
     // clang-format off
     const Eigen::Matrix<double, 3, 1> obser_state = ConvertObservationToState(observation);
     const Eigen::Matrix<double, 3, 1> y = (prev_state_ - obser_state);
-    const Eigen::Matrix<double, 3, 3> S = H * prev_covariance_ * (H.transpose()) + R;
+    const Eigen::Matrix<double, 3, 3> S = H * prev_covariance_ * (H.transpose()) + R_;
     const Eigen::Matrix<double, 3, 3> K = prev_covariance_ * (H.transpose()) * (S.inverse());
     prev_state_ = prev_state_ + K * y;
     const Eigen::Matrix<double, 3, 3> I = Eigen::Matrix<double, 3, 3>::Identity();
@@ -140,4 +133,12 @@ nav_msgs::msg::Odometry ExtendedKalmanFilter::Update(
     return BuildOdometryMessage(prev_time_, prev_state_, prev_covariance_);
 }
 
-}  // namespace sensor_fusion
+void ExtendedKalmanFilter::SetProcessCovariance(const std::vector<double>& cov) {
+    Q_ = ConvertVectorToMatrix(cov);
+}
+
+void ExtendedKalmanFilter::SetObservationCovariance(const std::vector<double>& cov) {
+    R_ = ConvertVectorToMatrix(cov);
+}
+
+} // namespace sensor_fusion

@@ -19,13 +19,18 @@ public:
                                     const Eigen::Matrix<double, 2, 1>& control);
     nav_msgs::msg::Odometry Update(const Observation& observation);
 
+    void SetProcessCovariance(const std::vector<double>& cov);
+    void SetObservationCovariance(const std::vector<double>& cov);
+
 private:
     // Transitions are from k - 1 to k where k - 1 is denoted by "prev"
     rclcpp::Time prev_time_;
     Eigen::Matrix<double, 3, 1> prev_state_;
     Eigen::Matrix<double, 3, 3> prev_covariance_;
+    Eigen::Matrix<double, 3, 3> Q_;
+    Eigen::Matrix<double, 3, 3> R_;
 };
 
-}  // namespace sensor_fusion
+} // namespace sensor_fusion
 
-#endif  // SENSOR_FUSION_EXTENDED_KALMAN_FILTER_H_
+#endif // SENSOR_FUSION_EXTENDED_KALMAN_FILTER_H_
