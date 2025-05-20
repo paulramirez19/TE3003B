@@ -14,6 +14,7 @@ find_package(nav_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
@@ -34,6 +35,7 @@ ament_target_dependencies(sensor_fusion
   sensor_msgs
   builtin_interfaces
   tf2
+  tf2_ros
 )
 
 install(TARGETS
