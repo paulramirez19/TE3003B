@@ -19,7 +19,10 @@ include_directories(SYSTEM ${Eigen_INCLUDE_DIRS})
 include_directories(include ${EIGEN3_INCLUDE_DIRS})
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
-add_executable(control src/controller.cpp)
+add_executable(control 
+  src/controller.cpp
+  src/cubic_spline.cpp
+)
 ament_target_dependencies(control rclcpp nav_msgs tf2)
 
 install(TARGETS
