@@ -1,3 +1,0 @@
-[console_scripts]
-planner_node = my_package.planner_node:main
-
