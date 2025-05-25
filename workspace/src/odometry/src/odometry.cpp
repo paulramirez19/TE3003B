@@ -16,8 +16,19 @@
 #include "tf2/LinearMath/Quaternion.h"
 
 namespace odometry {
+namespace {
+
+inline double NormalizeHeading(double angle) {
+    if (angle <= -M_PI) { return M_PI + std::fmod(angle, M_PI); }
+    if (angle >   M_PI) { return std::fmod(angle, M_PI) - M_PI; }
+    return angle;
+}
+
+}  // namespace
 
 Odometry::Odometry() : Node("odometry") {
+    last_vel_time_ = get_clock()->now();
+
     declare_parameter<double>("linear_scale_x", 1.0);
     declare_parameter<double>("linear_scale_y", 1.0);
     declare_parameter<bool>("pub_odom_tf", false);
@@ -30,14 +41,14 @@ Odometry::Odometry() : Node("odometry") {
     tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 }
 
-void Odometry::OdometryCallback(const geometry_msgs::msg::Twist& msg) {
-    const rclcpp::Time current_time(rclcpp::Clock().now());
+void Odometry::OdometryCallback(const geometry_msgs::msg::Twist::SharedPtr msg) {
+    const rclcpp::Time current_time = get_clock()->now();
 
     const double linear_scale_x = get_parameter("linear_scale_x").as_double();
     const double linear_scale_y = get_parameter("linear_scale_y").as_double();
-    const double linear_velocity_x = msg.linear.x * linear_scale_x;
-    const double linear_velocity_y = msg.linear.y * linear_scale_y;
-    const double angular_velocity_z = msg.angular.z;
+    const double linear_velocity_x = msg->linear.x * linear_scale_x;
+    const double linear_velocity_y = msg->linear.y * linear_scale_y;
+    const double angular_velocity_z = msg->angular.z;
 
     const double vel_dt = (current_time - last_vel_time_).seconds();
     last_vel_time_ = current_time;
@@ -53,8 +64,9 @@ void Odometry::OdometryCallback(const geometry_msgs::msg::Twist& msg) {
     x_pos_ += delta_x;
     y_pos_ += delta_y;
     heading_ += delta_heading;
+    heading_ = NormalizeHeading(heading_);
 
-    RCLCPP_INFO(get_logger(), "t: %g x: %g y: %g heading: %g", current_time.seconds(), x_pos_,
+    RCLCPP_INFO(get_logger(), "dt: %.6lf x: %.6lf y: %.6lf heading: %.6lf", vel_dt, x_pos_,
                 y_pos_, heading_);
 
     tf2::Quaternion quaternion;
@@ -82,8 +94,6 @@ void Odometry::OdometryCallback(const geometry_msgs::msg::Twist& msg) {
     odom.pose.covariance[7] = 0.001;
     odom.pose.covariance[35] = 0.001;
 
-    RCLCPP_INFO(get_logger(), "x: %g, y: %g, heading: %g", x_pos_, y_pos_, heading_);
-
     // Linear speed from encoders
     odom.twist.twist.linear.x = linear_velocity_x;
     odom.twist.twist.linear.y = linear_velocity_y;
@@ -99,7 +109,7 @@ void Odometry::OdometryCallback(const geometry_msgs::msg::Twist& msg) {
 
     const double linear_velocity = std::sqrt(linear_velocity_x * linear_velocity_x +
                                              linear_velocity_y * linear_velocity_y);
-    RCLCPP_INFO(get_logger(), "linear_velocity: %g, angular_velocity: %g", linear_velocity,
+    RCLCPP_INFO(get_logger(), "linear_velocity: %.6lf, angular_velocity: %.6lf", linear_velocity,
                 angular_velocity_z);
 
     publisher_->publish(odom);
@@ -107,7 +117,7 @@ void Odometry::OdometryCallback(const geometry_msgs::msg::Twist& msg) {
     const bool pub_odom_tf = get_parameter("pub_odom_tf").as_bool();
     if (pub_odom_tf) {
         geometry_msgs::msg::TransformStamped t;
-        rclcpp::Time now = rclcpp::Clock().now();
+        const rclcpp::Time now = get_clock()->now();
 
         t.header.stamp = now;
         t.header.frame_id = "odom";
