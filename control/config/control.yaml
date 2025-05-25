@@ -1,0 +1,7 @@
+/control:
+  ros__parameters:
+    distance_h: 0.10 # meters
+    x_gain: 1.0
+    y_gain: 1.0
+    theta_gain: 1.0
+    trajectory_duration: 10.0 # seconds
