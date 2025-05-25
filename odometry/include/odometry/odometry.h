@@ -18,12 +18,12 @@ public:
     Odometry();
 
 private:
-    void OdometryCallback(const geometry_msgs::msg::Twist& msg);
+    void OdometryCallback(const geometry_msgs::msg::Twist::SharedPtr msg);
 
     double x_pos_{0.0};
     double y_pos_{0.0};
     double heading_{0.0};
-    rclcpp::Time last_vel_time_{};
+    rclcpp::Time last_vel_time_;
 
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr subscription_;
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr publisher_;
