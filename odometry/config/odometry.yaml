@@ -1,0 +1,5 @@
+/odometry:
+  ros__parameters:
+    linear_scale_x: 1.0
+    linear_scale_y: 1.0
+    pub_odom_tf: false
