@@ -43,8 +43,8 @@ SensorFusion::SensorFusion() : Node("sensor_fusion"), filter_{get_clock(), get_l
     odom_pub_ = create_publisher<nav_msgs::msg::Odometry>("/odom_filtered", 10);
     tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 
-    declare_parameter<std::vector<double>>("process_noise_covariance");
-    declare_parameter<std::vector<double>>("observation_noise_covariance");
+    declare_parameter<std::vector<double>>("process_noise_covariance", std::vector<double>(9, 0.0));
+    declare_parameter<std::vector<double>>("observation_noise_covariance", std::vector<double>(9, 0.0));
 
     const std::vector<double> process_noise =
             get_parameter("process_noise_covariance").as_double_array();
