@@ -12,7 +12,7 @@
 #include "nav_msgs/msg/odometry.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "tf2/LinearMath/Quaternion.h"
-#include "tf2/utils.hpp"
+#include "tf2/utils.h"
 
 namespace sensor_fusion {
 namespace {

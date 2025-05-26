@@ -43,10 +43,4 @@ def generate_launch_description():
             ],
             output='screen'
         ),
-        
-        Node(
-            package='s8_py_slam',
-            executable='odom_to_vel_exe',
-            name='sim'
-        ),
     ])

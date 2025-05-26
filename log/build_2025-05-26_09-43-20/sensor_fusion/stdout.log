@@ -1,0 +1,3 @@
+[35m[1mScanning dependencies of target sensor_fusion[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/sensor_fusion.dir/src/extended_kalman_filter.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/sensor_fusion.dir/src/sensor_fusion.cpp.o[0m

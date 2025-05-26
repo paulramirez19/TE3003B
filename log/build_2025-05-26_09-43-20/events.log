@@ -1,0 +1,199 @@
+[0.000000] (-) TimerEvent: {}
+[0.001179] (-) JobUnselected: {'identifier': 'control'}
+[0.001251] (-) JobUnselected: {'identifier': 'filter_tuning'}
+[0.001316] (-) JobUnselected: {'identifier': 'odometry'}
+[0.001378] (-) JobUnselected: {'identifier': 'py_package'}
+[0.001440] (-) JobUnselected: {'identifier': 's7_py_client_robot'}
+[0.001463] (-) JobUnselected: {'identifier': 's7_py_robot_task_monitoring'}
+[0.001481] (-) JobUnselected: {'identifier': 's7_py_task_manager'}
+[0.001498] (-) JobUnselected: {'identifier': 's7_robot_network_interface'}
+[0.001557] (-) JobUnselected: {'identifier': 's8_py_slam'}
+[0.001618] (-) JobUnselected: {'identifier': 'simulation'}
+[0.001643] (sensor_fusion) JobQueued: {'identifier': 'sensor_fusion', 'dependencies': OrderedDict()}
+[0.002007] (sensor_fusion) JobStarted: {'identifier': 'sensor_fusion'}
+[0.027332] (sensor_fusion) JobProgress: {'identifier': 'sensor_fusion', 'progress': 'cmake'}
+[0.028632] (sensor_fusion) JobProgress: {'identifier': 'sensor_fusion', 'progress': 'build'}
+[0.029876] (sensor_fusion) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/yahboom/TE3003B/build/sensor_fusion', '--', '-j4', '-l4'], 'cwd': '/home/yahboom/TE3003B/build/sensor_fusion', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'yahboom'), ('LC_TIME', 'zh_CN.UTF-8'), ('SSH_AGENT_PID', '1374'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/teb_local_planner/lib:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/teb_msgs/lib:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/orbbec_camera/lib:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/orbbec_camera_msgs/lib:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/openslam_gmapping/lib:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/octomap_server/lib:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/costmap_converter/lib:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/costmap_converter_msgs/lib:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/home/yahboom'), ('OLDPWD', '/home/yahboom/TE3003B/workspace'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('MANAGERPID', '1122'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=0ecd2c9bed72e796c9f40bab6833b3f5'), ('COLORTERM', 'truecolor'), ('_colcon_cd_root', '/home/yahboom/'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/yahboom/TE3003B/workspace/install:/home/yahboom/dev_ws/install:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'yahboom'), ('JOURNAL_STREAM', '8:49126'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'yahboom'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/costmap_converter/bin:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/VM:@/tmp/.ICE-unix/1434,unix/VM:/tmp/.ICE-unix/1434'), ('INVOCATION_ID', 'c4214223245845bf9cbaab46a88caeed'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/8f0d0363_4a4c_4c24_90a3_b12e465cac84'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.77'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '28'), ('AMENT_PREFIX_PATH', '/home/yahboom/TE3003B/workspace/install/simulation:/home/yahboom/dev_ws/install/yahboomcar_rviz:/home/yahboom/dev_ws/install/yahboomcar_nav:/home/yahboom/dev_ws/install/yahboomcar_multi:/home/yahboom/dev_ws/install/yahboomcar_description:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/web_video_server:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/teb_local_planner:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/teb_msgs:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/sllidar_ros2:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/slam_gmapping:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/orbbec_description:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/orbbec_camera:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/orbbec_camera_msgs:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/openslam_gmapping:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/octomap_mapping:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/octomap_server:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/costmap_converter:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/costmap_converter_msgs:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_voice_ctrl:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_visual:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_slam:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_point:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_nav:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_msgs:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_mediapipe:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_linefollow:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_laser:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description_x1:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_ctrl:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_bringup:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_base_node:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_astra:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_KCFTracker:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/robot_pose_publisher:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/laserscan_to_point_pulisher:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/yahboom/TE3003B/build/sensor_fusion'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=0ecd2c9bed72e796c9f40bab6833b3f5'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/yahboom/TE3003B/workspace/install/simulation/lib/python3.8/site-packages:/home/yahboom/dev_ws/install/yahboomcar_rviz/lib/python3.8/site-packages:/home/yahboom/dev_ws/install/yahboomcar_nav/lib/python3.8/site-packages:/home/yahboom/dev_ws/install/yahboomcar_multi/lib/python3.8/site-packages:/home/yahboom/dev_ws/install/yahboomcar_description/lib/python3.8/site-packages:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/teb_msgs/lib/python3.8/site-packages:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/orbbec_camera_msgs/lib/python3.8/site-packages:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/costmap_converter_msgs/lib/python3.8/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_voice_ctrl/lib/python3.8/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_visual/lib/python3.8/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_nav/lib/python3.8/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_msgs/lib/python3.8/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_mediapipe/lib/python3.8/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_linefollow/lib/python3.8/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_laser/lib/python3.8/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description_x1/lib/python3.8/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description/lib/python3.8/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_ctrl/lib/python3.8/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_bringup/lib/python3.8/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_astra/lib/python3.8/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/robot_pose_publisher/lib/python3.8/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/laserscan_to_point_pulisher/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/web_video_server:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/teb_local_planner:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/teb_msgs:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/sllidar_ros2:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/slam_gmapping:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/orbbec_description:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/orbbec_camera:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/orbbec_camera_msgs:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/openslam_gmapping:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/octomap_mapping:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/octomap_server:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/costmap_converter:/home/yahboom/yahboomcar_ros2_ws/software/library_ws/install/costmap_converter_msgs:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_slam:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_point:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_msgs:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_base_node:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_KCFTracker:/home/yahboom/TE3003B/workspace/install/simulation:/home/yahboom/dev_ws/install/yahboomcar_rviz:/home/yahboom/dev_ws/install/yahboomcar_nav:/home/yahboom/dev_ws/install/yahboomcar_multi:/home/yahboom/dev_ws/install/yahboomcar_description:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_voice_ctrl:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_visual:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_nav:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_mediapipe:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_linefollow:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_laser:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description_x1:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_ctrl:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_bringup:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_astra:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/robot_pose_publisher:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/laserscan_to_point_pulisher:/opt/ros/foxy')]), 'shell': False}
+[0.100708] (-) TimerEvent: {}
+[0.125127] (sensor_fusion) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target sensor_fusion\x1b[0m\n'}
+[0.179829] (sensor_fusion) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/sensor_fusion.dir/src/extended_kalman_filter.cpp.o\x1b[0m\n'}
+[0.180074] (sensor_fusion) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/sensor_fusion.dir/src/sensor_fusion.cpp.o\x1b[0m\n'}
+[0.198863] (-) TimerEvent: {}
+[0.299466] (-) TimerEvent: {}
+[0.399976] (-) TimerEvent: {}
+[0.406784] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/extended_kalman_filter.cpp:14:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Ktf2/utils.hpp: No such file or directory\n'}
+[0.407024] (sensor_fusion) StderrLine: {'line': b'   14 | #include \x1b[01;31m\x1b[K"tf2/utils.hpp"\x1b[m\x1b[K\n'}
+[0.407107] (sensor_fusion) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.407176] (sensor_fusion) StderrLine: {'line': b'compilation terminated.\n'}
+[0.411342] (sensor_fusion) StderrLine: {'line': b'make[2]: *** [CMakeFiles/sensor_fusion.dir/build.make:89: CMakeFiles/sensor_fusion.dir/src/extended_kalman_filter.cpp.o] Error 1\n'}
+[0.411539] (sensor_fusion) StderrLine: {'line': b'make[2]: *** Waiting for unfinished jobs....\n'}
+[0.500230] (-) TimerEvent: {}
+[0.600920] (-) TimerEvent: {}
+[0.701451] (-) TimerEvent: {}
+[0.801944] (-) TimerEvent: {}
+[0.902459] (-) TimerEvent: {}
+[1.003360] (-) TimerEvent: {}
+[1.104025] (-) TimerEvent: {}
+[1.204484] (-) TimerEvent: {}
+[1.304953] (-) TimerEvent: {}
+[1.405403] (-) TimerEvent: {}
+[1.505866] (-) TimerEvent: {}
+[1.606334] (-) TimerEvent: {}
+[1.706758] (-) TimerEvent: {}
+[1.807169] (-) TimerEvent: {}
+[1.907632] (-) TimerEvent: {}
+[2.008162] (-) TimerEvent: {}
+[2.108740] (-) TimerEvent: {}
+[2.209331] (-) TimerEvent: {}
+[2.309842] (-) TimerEvent: {}
+[2.410441] (-) TimerEvent: {}
+[2.511120] (-) TimerEvent: {}
+[2.611631] (-) TimerEvent: {}
+[2.712188] (-) TimerEvent: {}
+[2.812627] (-) TimerEvent: {}
+[2.913118] (-) TimerEvent: {}
+[3.013616] (-) TimerEvent: {}
+[3.114220] (-) TimerEvent: {}
+[3.214658] (-) TimerEvent: {}
+[3.315072] (-) TimerEvent: {}
+[3.415550] (-) TimerEvent: {}
+[3.516059] (-) TimerEvent: {}
+[3.616470] (-) TimerEvent: {}
+[3.717053] (-) TimerEvent: {}
+[3.817884] (-) TimerEvent: {}
+[3.918307] (-) TimerEvent: {}
+[4.018749] (-) TimerEvent: {}
+[4.119218] (-) TimerEvent: {}
+[4.219668] (-) TimerEvent: {}
+[4.320176] (-) TimerEvent: {}
+[4.420610] (-) TimerEvent: {}
+[4.521041] (-) TimerEvent: {}
+[4.621459] (-) TimerEvent: {}
+[4.722537] (-) TimerEvent: {}
+[4.823460] (-) TimerEvent: {}
+[4.922545] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[Ksensor_fusion::SensorFusion::SensorFusion()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.922738] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:46:70:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_fusion::SensorFusion::declare_parameter<std::vector<double, std::allocator<double> > >(const char [25])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.922819] (sensor_fusion) StderrLine: {'line': b'   46 |     declare_parameter<std::vector<double>>("process_noise_covariance"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[4.922890] (sensor_fusion) StderrLine: {'line': b'      |                                                                      \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.922956] (sensor_fusion) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/node.hpp:1224\x1b[m\x1b[K,\n'}
+[4.923021] (sensor_fusion) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[4.923086] (sensor_fusion) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[4.923153] (sensor_fusion) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146\x1b[m\x1b[K,\n'}
+[4.923218] (sensor_fusion) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/include/sensor_fusion/sensor_fusion.h:14\x1b[m\x1b[K,\n'}
+[4.923282] (sensor_fusion) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:1\x1b[m\x1b[K:\n'}
+[4.923347] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/node_impl.hpp:157:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kauto rclcpp::Node::declare_parameter(const string&, const ParameterT&, const ParameterDescriptor&, bool) [with ParameterT = std::vector<double, std::allocator<double> >; std::string = std::__cxx11::basic_string<char>; rcl_interfaces::msg::ParameterDescriptor = rcl_interfaces::msg::ParameterDescriptor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.923431] (sensor_fusion) StderrLine: {'line': b'  157 | \x1b[01;36m\x1b[KNode\x1b[m\x1b[K::declare_parameter(\n'}
+[4.923493] (-) TimerEvent: {}
+[4.923752] (sensor_fusion) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[4.923861] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/node_impl.hpp:157:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 4 arguments, 1 provided\n'}
+[4.923953] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:47:74:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_fusion::SensorFusion::declare_parameter<std::vector<double, std::allocator<double> > >(const char [29])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.924026] (sensor_fusion) StderrLine: {'line': b'   47 |     declare_parameter<std::vector<double>>("observation_noise_covariance"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[4.924094] (sensor_fusion) StderrLine: {'line': b'      |                                                                          \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.924161] (sensor_fusion) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/node.hpp:1224\x1b[m\x1b[K,\n'}
+[4.924257] (sensor_fusion) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[4.924524] (sensor_fusion) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[4.924766] (sensor_fusion) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146\x1b[m\x1b[K,\n'}
+[4.925181] (sensor_fusion) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/include/sensor_fusion/sensor_fusion.h:14\x1b[m\x1b[K,\n'}
+[4.925422] (sensor_fusion) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:1\x1b[m\x1b[K:\n'}
+[4.925596] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/node_impl.hpp:157:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kauto rclcpp::Node::declare_parameter(const string&, const ParameterT&, const ParameterDescriptor&, bool) [with ParameterT = std::vector<double, std::allocator<double> >; std::string = std::__cxx11::basic_string<char>; rcl_interfaces::msg::ParameterDescriptor = rcl_interfaces::msg::ParameterDescriptor_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.925757] (sensor_fusion) StderrLine: {'line': b'  157 | \x1b[01;36m\x1b[KNode\x1b[m\x1b[K::declare_parameter(\n'}
+[4.925885] (sensor_fusion) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[4.925999] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/node_impl.hpp:157:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 4 arguments, 1 provided\n'}
+[4.928908] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid sensor_fusion::SensorFusion::OdometryCallback(nav_msgs::msg::Odometry_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.929125] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:59:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kscoped_lock\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kstd\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.929203] (sensor_fusion) StderrLine: {'line': b'   59 |     std::\x1b[01;31m\x1b[Kscoped_lock\x1b[m\x1b[K<std::mutex> sl{mutex_};\n'}
+[4.929273] (sensor_fusion) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.929339] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:59:10:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd::scoped_lock\x1b[m\x1b[K\xe2\x80\x99 is only available from C++17 onwards\n'}
+[4.929405] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:59:32:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[4.929469] (sensor_fusion) StderrLine: {'line': b'   59 |     std::scoped_lock<std::mutex\x1b[01;31m\x1b[K>\x1b[m\x1b[K sl{mutex_};\n'}
+[4.929532] (sensor_fusion) StderrLine: {'line': b'      |                                \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.930943] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:59:34:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksl\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.931100] (sensor_fusion) StderrLine: {'line': b'   59 |     std::scoped_lock<std::mutex> \x1b[01;31m\x1b[Ksl\x1b[m\x1b[K{mutex_};\n'}
+[4.931177] (sensor_fusion) StderrLine: {'line': b'      |                                  \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[4.952264] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid sensor_fusion::SensorFusion::LidarCallback(geometry_msgs::msg::PoseStamped_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.952468] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:65:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kscoped_lock\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kstd\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.952557] (sensor_fusion) StderrLine: {'line': b'   65 |     std::\x1b[01;31m\x1b[Kscoped_lock\x1b[m\x1b[K<std::mutex> sl{mutex_};\n'}
+[4.952633] (sensor_fusion) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.952705] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:65:10:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd::scoped_lock\x1b[m\x1b[K\xe2\x80\x99 is only available from C++17 onwards\n'}
+[4.952801] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:65:32:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[4.952988] (sensor_fusion) StderrLine: {'line': b'   65 |     std::scoped_lock<std::mutex\x1b[01;31m\x1b[K>\x1b[m\x1b[K sl{mutex_};\n'}
+[4.953155] (sensor_fusion) StderrLine: {'line': b'      |                                \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.956391] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:65:34:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksl\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.956710] (sensor_fusion) StderrLine: {'line': b'   65 |     std::scoped_lock<std::mutex> \x1b[01;31m\x1b[Ksl\x1b[m\x1b[K{mutex_};\n'}
+[4.957014] (sensor_fusion) StderrLine: {'line': b'      |                                  \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[4.960066] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid sensor_fusion::SensorFusion::FusedSensorsCallback()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.960252] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:79:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kscoped_lock\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kstd\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.960333] (sensor_fusion) StderrLine: {'line': b'   79 |     std::\x1b[01;31m\x1b[Kscoped_lock\x1b[m\x1b[K<std::mutex> sl{mutex_};\n'}
+[4.960405] (sensor_fusion) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.960473] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:79:10:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd::scoped_lock\x1b[m\x1b[K\xe2\x80\x99 is only available from C++17 onwards\n'}
+[4.960540] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:79:32:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[4.960606] (sensor_fusion) StderrLine: {'line': b'   79 |     std::scoped_lock<std::mutex\x1b[01;31m\x1b[K>\x1b[m\x1b[K sl{mutex_};\n'}
+[4.960671] (sensor_fusion) StderrLine: {'line': b'      |                                \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.962099] (sensor_fusion) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yahboom/TE3003B/workspace/src/sensor_fusion/src/sensor_fusion.cpp:79:34:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksl\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.962276] (sensor_fusion) StderrLine: {'line': b'   79 |     std::scoped_lock<std::mutex> \x1b[01;31m\x1b[Ksl\x1b[m\x1b[K{mutex_};\n'}
+[4.962363] (sensor_fusion) StderrLine: {'line': b'      |                                  \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.023708] (-) TimerEvent: {}
+[5.124178] (-) TimerEvent: {}
+[5.224676] (-) TimerEvent: {}
+[5.325227] (-) TimerEvent: {}
+[5.425667] (-) TimerEvent: {}
+[5.526107] (-) TimerEvent: {}
+[5.626577] (-) TimerEvent: {}
+[5.727037] (-) TimerEvent: {}
+[5.827464] (-) TimerEvent: {}
+[5.928187] (-) TimerEvent: {}
+[6.029063] (-) TimerEvent: {}
+[6.129494] (-) TimerEvent: {}
+[6.229960] (-) TimerEvent: {}
+[6.330469] (-) TimerEvent: {}
+[6.431014] (-) TimerEvent: {}
+[6.531568] (-) TimerEvent: {}
+[6.632466] (-) TimerEvent: {}
+[6.732992] (-) TimerEvent: {}
+[6.833521] (-) TimerEvent: {}
+[6.933994] (-) TimerEvent: {}
+[7.034458] (-) TimerEvent: {}
+[7.134919] (-) TimerEvent: {}
+[7.235437] (-) TimerEvent: {}
+[7.336013] (-) TimerEvent: {}
+[7.436502] (-) TimerEvent: {}
+[7.536985] (-) TimerEvent: {}
+[7.637410] (-) TimerEvent: {}
+[7.737977] (-) TimerEvent: {}
+[7.838860] (-) TimerEvent: {}
+[7.939353] (-) TimerEvent: {}
+[8.040015] (-) TimerEvent: {}
+[8.140855] (-) TimerEvent: {}
+[8.241583] (-) TimerEvent: {}
+[8.342647] (-) TimerEvent: {}
+[8.443263] (-) TimerEvent: {}
+[8.543733] (-) TimerEvent: {}
+[8.644185] (-) TimerEvent: {}
+[8.744681] (-) TimerEvent: {}
+[8.845134] (-) TimerEvent: {}
+[8.945632] (-) TimerEvent: {}
+[9.046112] (-) TimerEvent: {}
+[9.146629] (-) TimerEvent: {}
+[9.247118] (-) TimerEvent: {}
+[9.347565] (-) TimerEvent: {}
+[9.448026] (-) TimerEvent: {}
+[9.548518] (-) TimerEvent: {}
+[9.649099] (-) TimerEvent: {}
+[9.749721] (-) TimerEvent: {}
+[9.850259] (-) TimerEvent: {}
+[9.950852] (-) TimerEvent: {}
+[10.051355] (-) TimerEvent: {}
+[10.151819] (-) TimerEvent: {}
+[10.252220] (-) TimerEvent: {}
+[10.352655] (-) TimerEvent: {}
+[10.453113] (-) TimerEvent: {}
+[10.553581] (-) TimerEvent: {}
+[10.654057] (-) TimerEvent: {}
+[10.754558] (-) TimerEvent: {}
+[10.801313] (sensor_fusion) StderrLine: {'line': b'make[2]: *** [CMakeFiles/sensor_fusion.dir/build.make:63: CMakeFiles/sensor_fusion.dir/src/sensor_fusion.cpp.o] Error 1\n'}
+[10.801946] (sensor_fusion) StderrLine: {'line': b'make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/sensor_fusion.dir/all] Error 2\n'}
+[10.804189] (sensor_fusion) StderrLine: {'line': b'make: *** [Makefile:141: all] Error 2\n'}
+[10.809681] (sensor_fusion) CommandEnded: {'returncode': 2}
+[10.855077] (-) TimerEvent: {}
+[10.897589] (sensor_fusion) JobEnded: {'identifier': 'sensor_fusion', 'rc': 2}
+[10.909691] (-) EventReactorShutdown: {}

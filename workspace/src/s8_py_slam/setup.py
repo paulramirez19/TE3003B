@@ -31,8 +31,7 @@ setup(
         'console_scripts': [
             "pose_publisher_exe = s8_py_slam.pose_publisher:main",
             "map_terminal_printer_exe = s8_py_slam.map_terminal_printer:main",
-            "relative_map_terminal_printer_exe = s8_py_slam.relative_map_terminal_printer:main",
-            "odom_to_vel_exe = s8_py_slam.odom_to_vel:main"
+            "relative_map_terminal_printer_exe = s8_py_slam.relative_map_terminal_printer:main"
         ],
     },
 )
