@@ -56,13 +56,13 @@ SensorFusion::SensorFusion() : Node("sensor_fusion"), filter_{get_clock(), get_l
 }
 
 void SensorFusion::OdometryCallback(const nav_msgs::msg::Odometry::SharedPtr odom) {
-    std::scoped_lock<std::mutex> sl{mutex_};
+    const std::lock_guard<std::mutex> lg{mutex_};
     const Observation observation{*odom};
     observations_.push(observation);
 }
 
 void SensorFusion::LidarCallback(const geometry_msgs::msg::PoseStamped::SharedPtr pose) {
-    std::scoped_lock<std::mutex> sl{mutex_};
+    const std::lock_guard<std::mutex> lg{mutex_};
     const Observation observation{*pose};
     observations_.push(observation);
 }
@@ -76,7 +76,7 @@ void SensorFusion::ControlCallback(const geometry_msgs::msg::Twist::SharedPtr ct
 }
 
 void SensorFusion::FusedSensorsCallback() {
-    std::scoped_lock<std::mutex> sl{mutex_};
+    const std::lock_guard<std::mutex> lg{mutex_};
     nav_msgs::msg::Odometry filtered_odom;
     filtered_odom = filter_.Predict(get_clock()->now(), control_);
     while (!observations_.empty()) {
