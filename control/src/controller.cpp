@@ -91,17 +91,17 @@ void Controller::ControllerCallback() {
         SetBoundaryConditions();
     }
     const rclcpp::Duration time = get_clock()->now() - initial_time_;
-    const auto [x_desired, x_dot_desired] =
+    const std::pair<double, double> x_kinematics =
             GetKinematics(cubic_splines_coeffs_[0].GetCoefficients(), time.seconds());
-    const auto [y_desired, y_dot_desired] =
+    const std::pair<double, double> y_kinematics =
             GetKinematics(cubic_splines_coeffs_[1].GetCoefficients(), time.seconds());
-    const auto [theta_desired, theta_dot_desired] =
+    const std::pair<double, double> theta_kinematics =
             GetKinematics(cubic_splines_coeffs_[2].GetCoefficients(), time.seconds());
-    const Eigen::Matrix<double, 2, 1> q_desired{x_desired, y_desired};
-    const Eigen::Matrix<double, 2, 1> q_dot_desired{x_dot_desired, y_dot_desired};
+    const Eigen::Matrix<double, 2, 1> q_desired{x_kinematics.first, y_kinematics.first};
+    const Eigen::Matrix<double, 2, 1> q_dot_desired{x_kinematics.second, y_kinematics.second};
     const Eigen::Matrix<double, 2, 1> u = (controller_type_ == ControllerType::kPosition)
             ? (PositionController(q_desired, q_dot_desired))
-            : (OrientationController(theta_desired, theta_dot_desired));
+            : (OrientationController(theta_kinematics.first, theta_kinematics.second));
 
     geometry_msgs::msg::Twist ctrl;
 
@@ -120,11 +120,8 @@ Eigen::Matrix<double, 2, 1> Controller::PositionController(
         const Eigen::Matrix<double, 2, 1>& q_dot_desired) const {
     const double h = get_parameter("distance_h").as_double();
     const double theta = GetYawFromOdometry(odom_);
-    // clang-format off
     Eigen::Matrix<double, 2, 2> D;
-    D <<                               std::cos(theta), -h * std::sin(theta),
-                                       std::sin(theta),  h * std::cos(theta);
-    // clang-format on
+    D << std::cos(theta), -h * std::sin(theta), std::sin(theta), h * std::cos(theta);
     const Eigen::Matrix<double, 2, 1> q{odom_.pose.pose.position.x, odom_.pose.pose.position.y};
 
     const double k_x = get_parameter("x_gain").as_double();
@@ -147,21 +144,15 @@ Eigen::Matrix<double, 4, 1> Controller::GetSingleAxisBoundaryConditions(
     switch (state_variable) {
         case 0: {
             return Eigen::Matrix<double, 4, 1>{odom_.pose.pose.position.x,
-                                               pose_prev_.second.pose.pose.position.x,
-                                               0.0,
-                                               0.0};
+                                               pose_prev_.second.pose.pose.position.x, 0.0, 0.0};
         }
         case 1: {
             return Eigen::Matrix<double, 4, 1>{odom_.pose.pose.position.y,
-                                               pose_prev_.second.pose.pose.position.y,
-                                               0.0,
-                                               0.0};
+                                               pose_prev_.second.pose.pose.position.y, 0.0, 0.0};
         }
         case 2: {
             return Eigen::Matrix<double, 4, 1>{GetYawFromOdometry(odom_),
-                                               GetYawFromOdometry(pose_prev_.second),
-                                               0.0,
-                                               0.0};
+                                               GetYawFromOdometry(pose_prev_.second), 0.0, 0.0};
         }
         default: {
             RCLCPP_FATAL(get_logger(), "Invalid state variable index!");

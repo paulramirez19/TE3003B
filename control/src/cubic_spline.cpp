@@ -6,13 +6,11 @@
 #include <eigen3/Eigen/Dense>
 
 namespace control {
-namespace {}  // namespace
+namespace {} // namespace
 
 CubicSpline::CubicSpline() {
-    matrix_ << 0.0, 0.0, 0.0, 1.0,
-               std::pow(T_, 3.0), std::pow(T_, 2.0), T_, 1.0,
-               0.0, 0.0, 1.0, 0.0,
-               3 * std::pow(T_, 2.0), 2 * T_, 1.0, 0.0;
+    matrix_ << 0.0, 0.0, 0.0, 1.0, std::pow(T_, 3.0), std::pow(T_, 2.0), T_, 1.0, 0.0, 0.0, 1.0,
+            0.0, 3 * std::pow(T_, 2.0), 2 * T_, 1.0, 0.0;
 }
 
 void CubicSpline::SetTrajectoryDuration(double trajectory_duration) {
@@ -27,4 +25,4 @@ Eigen::Matrix<double, 4, 1> CubicSpline::GetCoefficients() const {
     return matrix_.inverse() * boundary_conditions_;
 }
 
-}  // namespace control
+} // namespace control
