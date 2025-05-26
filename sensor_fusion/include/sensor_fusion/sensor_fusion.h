@@ -25,9 +25,9 @@ public:
     SensorFusion();
 
 private:
-    void OdometryCallback(const nav_msgs::msg::Odometry& odom);
-    void LidarCallback(const geometry_msgs::msg::PoseStamped& pose);
-    void ControlCallback(const geometry_msgs::msg::Twist& ctrl);
+    void OdometryCallback(const nav_msgs::msg::Odometry::SharedPtr odom);
+    void LidarCallback(const geometry_msgs::msg::PoseStamped::SharedPtr pose);
+    void ControlCallback(const geometry_msgs::msg::Twist::SharedPtr ctrl);
     void FusedSensorsCallback();
 
     std::priority_queue<Observation, std::vector<Observation>, std::greater<Observation>>

@@ -6,14 +6,16 @@
 #include <eigen3/Eigen/Core>
 
 #include "nav_msgs/msg/odometry.hpp"
+#include "rclcpp/clock.hpp"
 #include "rclcpp/time.hpp"
+#include "rclcpp/logger.hpp"
 #include "sensor_fusion/observation.h"
 
 namespace sensor_fusion {
 
 class ExtendedKalmanFilter {
 public:
-    ExtendedKalmanFilter();
+    ExtendedKalmanFilter(const rclcpp::Clock::SharedPtr& clock, const rclcpp::Logger& logger);
 
     nav_msgs::msg::Odometry Predict(const rclcpp::Time& time,
                                     const Eigen::Matrix<double, 2, 1>& control);
@@ -23,6 +25,8 @@ public:
     void SetObservationCovariance(const std::vector<double>& cov);
 
 private:
+    const rclcpp::Clock::SharedPtr& clock_;
+    const rclcpp::Logger& logger_;
     // Transitions are from k - 1 to k where k - 1 is denoted by "prev"
     rclcpp::Time prev_time_;
     Eigen::Matrix<double, 3, 1> prev_state_;
