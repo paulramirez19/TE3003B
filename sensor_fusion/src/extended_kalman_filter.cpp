@@ -18,13 +18,11 @@ namespace {
 
 constexpr double kH{0.10}; // meters
 
-// clang-format off
-const Eigen::Matrix<double, 3, 3> H{
-    {1.0, 0.0, 0.0},
-    {0.0, 1.0, 0.0},
-    {0.0, 0.0, 1.0}
-};
-// clang-format on
+Eigen::Matrix<double, 3, 3> H() {
+    Eigen::Matrix<double, 3, 3> H_internal;
+    H_internal << 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0;
+    return H_internal;
+}
 
 Eigen::Matrix<double, 3, 2> B(const Eigen::Matrix<double, 3, 1>& x) {
     // clang-format off
@@ -38,12 +36,13 @@ Eigen::Matrix<double, 3, 2> B(const Eigen::Matrix<double, 3, 1>& x) {
 
 Eigen::Matrix<double, 3, 3> F(const Eigen::Matrix<double, 3, 1> x,
                               const Eigen::Matrix<double, 2, 1> u) {
-    // clang-format off
-    return Eigen::Matrix<double, 3, 3>{
-        {0.0, 0.0, -u(0, 0) * std::sin(x(2, 0)) - kH * std::cos(x(2, 0)) * u(1, 0)},
-        {0.0, 0.0,  u(0, 0) * std::cos(x(2, 0)) - kH * std::sin(x(2, 0)) * u(1, 0)},
-        {0.0, 0.0, 0.0}
-    };
+    Eigen::Matrix<double, 3, 3> F_internal;
+    F_internal << 
+        0.0, 0.0, -u(0, 0) * std::sin(x(2, 0)) - kH * std::cos(x(2, 0)) * u(1, 0),
+        0.0, 0.0,  u(0, 0) * std::cos(x(2, 0)) - kH * std::sin(x(2, 0)) * u(1, 0),
+        0.0, 0.0, 0.0;
+
+    return F_internal;
     // clang-format on
 }
 
@@ -118,11 +117,11 @@ nav_msgs::msg::Odometry ExtendedKalmanFilter::Update(const Observation& observat
     // clang-format off
     const Eigen::Matrix<double, 3, 1> obser_state = ConvertObservationToState(observation);
     const Eigen::Matrix<double, 3, 1> y = (prev_state_ - obser_state);
-    const Eigen::Matrix<double, 3, 3> S = H * prev_covariance_ * (H.transpose()) + R_;
-    const Eigen::Matrix<double, 3, 3> K = prev_covariance_ * (H.transpose()) * (S.inverse());
+    const Eigen::Matrix<double, 3, 3> S = H() * prev_covariance_ * (H().transpose()) + R_;
+    const Eigen::Matrix<double, 3, 3> K = prev_covariance_ * (H().transpose()) * (S.inverse());
     prev_state_ = prev_state_ + K * y;
     const Eigen::Matrix<double, 3, 3> I = Eigen::Matrix<double, 3, 3>::Identity();
-    prev_covariance_ = (I - K * H) * prev_covariance_;
+    prev_covariance_ = (I - K * H()) * prev_covariance_;
     // clang-format on
     return BuildOdometryMessage(prev_time_, prev_state_, prev_covariance_);
 }
