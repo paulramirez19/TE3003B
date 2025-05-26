@@ -97,8 +97,8 @@ void Controller::ControllerCallback() {
             GetKinematics(cubic_splines_coeffs_[1].GetCoefficients(), time.seconds());
     const auto [theta_desired, theta_dot_desired] =
             GetKinematics(cubic_splines_coeffs_[2].GetCoefficients(), time.seconds());
-    const Eigen::Matrix<double, 2, 1> q_desired{{x_desired}, {y_desired}};
-    const Eigen::Matrix<double, 2, 1> q_dot_desired{{x_dot_desired}, {y_dot_desired}};
+    const Eigen::Matrix<double, 2, 1> q_desired{x_desired, y_desired};
+    const Eigen::Matrix<double, 2, 1> q_dot_desired{x_dot_desired, y_dot_desired};
     const Eigen::Matrix<double, 2, 1> u = (controller_type_ == ControllerType::kPosition)
             ? (PositionController(q_desired, q_dot_desired))
             : (OrientationController(theta_desired, theta_dot_desired));
@@ -121,14 +121,16 @@ Eigen::Matrix<double, 2, 1> Controller::PositionController(
     const double h = get_parameter("distance_h").as_double();
     const double theta = GetYawFromOdometry(odom_);
     // clang-format off
-    const Eigen::Matrix<double, 2, 2> D{{std::cos(theta), -h * std::sin(theta)},
-                                        {std::sin(theta),  h * std::cos(theta)}};
+    Eigen::Matrix<double, 2, 2> D;
+    D <<                               std::cos(theta), -h * std::sin(theta),
+                                       std::sin(theta),  h * std::cos(theta);
     // clang-format on
-    const Eigen::Matrix<double, 2, 1> q{{odom_.pose.pose.position.x}, {odom_.pose.pose.position.y}};
+    const Eigen::Matrix<double, 2, 1> q{odom_.pose.pose.position.x, odom_.pose.pose.position.y};
 
     const double k_x = get_parameter("x_gain").as_double();
     const double k_y = get_parameter("y_gain").as_double();
-    const Eigen::Matrix<double, 2, 2> K_p{{k_x, 0.0}, {0.0, k_y}};
+    Eigen::Matrix<double, 2, 2> K_p;
+    K_p << k_x, 0.0, 0.0, k_y;
     return D.inverse() * (q_dot_desired + K_p * (q_desired - q));
 }
 
@@ -136,7 +138,7 @@ Eigen::Matrix<double, 2, 1> Controller::OrientationController(double theta_desir
                                                               double theta_dot_desired) const {
     const double theta = GetYawFromOdometry(odom_);
     const double k_theta = get_parameter("theta_gain").as_double();
-    const Eigen::Matrix<double, 2, 1> phi{{0.0}, {1.0}};
+    const Eigen::Matrix<double, 2, 1> phi{0.0, 1.0};
     return phi * (theta_dot_desired + k_theta * (theta_desired - theta));
 }
 
@@ -144,22 +146,22 @@ Eigen::Matrix<double, 4, 1> Controller::GetSingleAxisBoundaryConditions(
         std::size_t state_variable) const {
     switch (state_variable) {
         case 0: {
-            return Eigen::Matrix<double, 4, 1>{{odom_.pose.pose.position.x},
-                                               {pose_prev_.second.pose.pose.position.x},
-                                               {0.0},
-                                               {0.0}};
+            return Eigen::Matrix<double, 4, 1>{odom_.pose.pose.position.x,
+                                               pose_prev_.second.pose.pose.position.x,
+                                               0.0,
+                                               0.0};
         }
         case 1: {
-            return Eigen::Matrix<double, 4, 1>{{odom_.pose.pose.position.y},
-                                               {pose_prev_.second.pose.pose.position.y},
-                                               {0.0},
-                                               {0.0}};
+            return Eigen::Matrix<double, 4, 1>{odom_.pose.pose.position.y,
+                                               pose_prev_.second.pose.pose.position.y,
+                                               0.0,
+                                               0.0};
         }
         case 2: {
-            return Eigen::Matrix<double, 4, 1>{{GetYawFromOdometry(odom_)},
-                                               {GetYawFromOdometry(pose_prev_.second)},
-                                               {0.0},
-                                               {0.0}};
+            return Eigen::Matrix<double, 4, 1>{GetYawFromOdometry(odom_),
+                                               GetYawFromOdometry(pose_prev_.second),
+                                               0.0,
+                                               0.0};
         }
         default: {
             RCLCPP_FATAL(get_logger(), "Invalid state variable index!");
