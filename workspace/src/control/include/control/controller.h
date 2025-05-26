@@ -3,7 +3,7 @@
 
 #include <array>
 #include <cstdint>
-#include <optional>
+#include <utility>
 
 #include "control/cubic_spline.h"
 #include "geometry_msgs/msg/twist.hpp"
@@ -18,8 +18,8 @@ class Controller : public rclcpp::Node {
 public:
     Controller();
 
-    void OdometryCallback(const nav_msgs::msg::Odometry& odom);
-    void DesiredPoseCallback(const nav_msgs::msg::Odometry& pose);
+    void OdometryCallback(const nav_msgs::msg::Odometry::SharedPtr odom);
+    void DesiredPoseCallback(const nav_msgs::msg::Odometry::SharedPtr pose);
     void ControllerCallback();
 
 private:
@@ -34,7 +34,7 @@ private:
 
     nav_msgs::msg::Odometry odom_;
     nav_msgs::msg::Odometry pose_;
-    std::optional<nav_msgs::msg::Odometry> pose_prev_;
+    std::pair<bool, nav_msgs::msg::Odometry> pose_prev_;
     rclcpp::Time initial_time_;
     std::array<CubicSpline, 3> cubic_splines_coeffs_;
 

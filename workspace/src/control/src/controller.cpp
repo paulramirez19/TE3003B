@@ -5,7 +5,6 @@
 #include <cstdlib>
 #include <functional>
 #include <memory>
-#include <optional>
 #include <utility>
 
 #include <eigen3/Eigen/Core>
@@ -50,7 +49,7 @@ double GetYawFromOdometry(const nav_msgs::msg::Odometry& odom) {
 
 } // namespace
 
-Controller::Controller() : Node("controller") {
+Controller::Controller() : Node("controller"), pose_prev_{false, nav_msgs::msg::Odometry()} {
     odom_sub_ =
             create_subscription<nav_msgs::msg::Odometry>("/odom_filtered", 10,
                                                          std::bind(&Controller::OdometryCallback,
@@ -72,22 +71,23 @@ Controller::Controller() : Node("controller") {
     declare_parameter<double>("trajectory_duration", 10.0);
 }
 
-void Controller::OdometryCallback(const nav_msgs::msg::Odometry& odom) {
-    odom_ = odom;
+void Controller::OdometryCallback(const nav_msgs::msg::Odometry::SharedPtr odom) {
+    odom_ = *odom;
 }
 
-void Controller::DesiredPoseCallback(const nav_msgs::msg::Odometry& pose) {
-    pose_ = pose;
+void Controller::DesiredPoseCallback(const nav_msgs::msg::Odometry::SharedPtr pose) {
+    pose_ = *pose;
 }
 
 void Controller::ControllerCallback() {
-    if (!pose_prev_.has_value()) {
-        pose_prev_ = std::make_optional(pose_);
+    if (!pose_prev_.first) {
+        pose_prev_.second = pose_;
+        pose_prev_.first = true;
         SetBoundaryConditions();
     }
-    if (pose_prev_.has_value() && !EqualPose(*pose_prev_, pose_)) {
+    if (pose_prev_.first && !EqualPose(pose_prev_.second, pose_)) {
         initial_time_ = get_clock()->now();
-        pose_prev_ = pose_;
+        pose_prev_.second = pose_;
         SetBoundaryConditions();
     }
     const rclcpp::Duration time = get_clock()->now() - initial_time_;
@@ -145,19 +145,19 @@ Eigen::Matrix<double, 4, 1> Controller::GetSingleAxisBoundaryConditions(
     switch (state_variable) {
         case 0: {
             return Eigen::Matrix<double, 4, 1>{{odom_.pose.pose.position.x},
-                                               {pose_prev_->pose.pose.position.x},
+                                               {pose_prev_.second.pose.pose.position.x},
                                                {0.0},
                                                {0.0}};
         }
         case 1: {
             return Eigen::Matrix<double, 4, 1>{{odom_.pose.pose.position.y},
-                                               {pose_prev_->pose.pose.position.y},
+                                               {pose_prev_.second.pose.pose.position.y},
                                                {0.0},
                                                {0.0}};
         }
         case 2: {
             return Eigen::Matrix<double, 4, 1>{{GetYawFromOdometry(odom_)},
-                                               {GetYawFromOdometry(*pose_prev_)},
+                                               {GetYawFromOdometry(pose_prev_.second)},
                                                {0.0},
                                                {0.0}};
         }
