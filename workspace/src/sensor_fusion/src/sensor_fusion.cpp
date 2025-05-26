@@ -25,7 +25,7 @@ double GetYawFromOdometry(const nav_msgs::msg::Odometry& odom) {
 
 } // namespace
 
-SensorFusion::SensorFusion() : Node("sensor_fusion"), filter_{} {
+SensorFusion::SensorFusion() : Node("sensor_fusion"), filter_{get_clock(), get_logger()} {
     odom_sub_ =
             create_subscription<nav_msgs::msg::Odometry>("/odom_raw", 10,
                                                          std::bind(&SensorFusion::OdometryCallback,
@@ -45,38 +45,40 @@ SensorFusion::SensorFusion() : Node("sensor_fusion"), filter_{} {
 
     declare_parameter<std::vector<double>>("process_noise_covariance");
     declare_parameter<std::vector<double>>("observation_noise_covariance");
-    const std::vector<double>& process_noise =
+
+    const std::vector<double> process_noise =
             get_parameter("process_noise_covariance").as_double_array();
-    const std::vector<double>& observation_noise =
+    const std::vector<double> observation_noise =
             get_parameter("observation_noise_covariance").as_double_array();
+    
     filter_.SetProcessCovariance(process_noise);
     filter_.SetObservationCovariance(observation_noise);
 }
 
-void SensorFusion::OdometryCallback(const nav_msgs::msg::Odometry& odom) {
+void SensorFusion::OdometryCallback(const nav_msgs::msg::Odometry::SharedPtr odom) {
     std::scoped_lock<std::mutex> sl{mutex_};
-    const Observation observation{odom};
+    const Observation observation{*odom};
     observations_.push(observation);
 }
 
-void SensorFusion::LidarCallback(const geometry_msgs::msg::PoseStamped& pose) {
+void SensorFusion::LidarCallback(const geometry_msgs::msg::PoseStamped::SharedPtr pose) {
     std::scoped_lock<std::mutex> sl{mutex_};
-    const Observation observation{pose};
+    const Observation observation{*pose};
     observations_.push(observation);
 }
 
-void SensorFusion::ControlCallback(const geometry_msgs::msg::Twist& ctrl) {
-    const double x = ctrl.linear.x;
-    const double y = ctrl.linear.y;
-    const double linear_velocity = std::sqrt(x * x + y + y);
+void SensorFusion::ControlCallback(const geometry_msgs::msg::Twist::SharedPtr ctrl) {
+    const double x = ctrl->linear.x;
+    const double y = ctrl->linear.y;
+    const double linear_velocity = std::sqrt(x * x + y * y);
     control_(0, 0) = linear_velocity;
-    control_(1, 0) = ctrl.angular.z;
+    control_(1, 0) = ctrl->angular.z;
 }
 
 void SensorFusion::FusedSensorsCallback() {
     std::scoped_lock<std::mutex> sl{mutex_};
     nav_msgs::msg::Odometry filtered_odom;
-    filtered_odom = filter_.Predict(rclcpp::Clock().now(), control_);
+    filtered_odom = filter_.Predict(get_clock()->now(), control_);
     while (!observations_.empty()) {
         filtered_odom = filter_.Update(observations_.top());
         observations_.pop();
@@ -98,8 +100,9 @@ void SensorFusion::FusedSensorsCallback() {
 
     tf_broadcaster_->sendTransform(t);
 
-    RCLCPP_INFO(get_logger(), "x: %g, y: %g, heading: %g", filtered_odom.pose.pose.position.x,
-                filtered_odom.pose.pose.position.y, GetYawFromOdometry(filtered_odom));
+    RCLCPP_INFO(get_logger(), "x: %.6lf, y: %.6lf, heading: %.6lf",
+                filtered_odom.pose.pose.position.x, filtered_odom.pose.pose.position.y,
+                GetYawFromOdometry(filtered_odom));
     odom_pub_->publish(filtered_odom);
 }
 

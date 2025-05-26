@@ -8,6 +8,7 @@
 #include "nav_msgs/msg/odometry.hpp"
 #include "rclcpp/duration.hpp"
 #include "rclcpp/time.hpp"
+#include "rclcpp/rclcpp.hpp"
 #include "tf2/LinearMath/Matrix3x3.h"
 #include "tf2/LinearMath/Quaternion.h"
 #include "tf2/utils.hpp"
@@ -88,20 +89,13 @@ Eigen::Matrix<double, 3, 1> ConvertObservationToState(const Observation& observa
 }
 
 Eigen::Matrix<double, 3, 3> ConvertVectorToMatrix(const std::vector<double>& vec) {
-    constexpr std::size_t row_size = 3;
-    constexpr std::size_t col_size = 3;
-    Eigen::Matrix<double, 3, 3> matrix;
-    for (std::size_t i = 0; i < row_size; ++i) {
-        for (std::size_t j = 0; j < col_size; ++j) {
-            matrix(i, j) = vec[i * col_size + j];
-        }
-    }
-    return matrix;
+    return Eigen::Map<const Eigen::Matrix<double, 3, 3, Eigen::RowMajor>>(vec.data());
 }
 
 } // namespace
 
-ExtendedKalmanFilter::ExtendedKalmanFilter() : prev_time_() {}
+ExtendedKalmanFilter::ExtendedKalmanFilter(const rclcpp::Clock::SharedPtr& clock, const rclcpp::Logger& logger)
+      : clock_{clock}, logger_{logger}, prev_time_{clock_->now()} {}
 
 nav_msgs::msg::Odometry ExtendedKalmanFilter::Predict(const rclcpp::Time& time,
                                                       const Eigen::Matrix<double, 2, 1>& control) {

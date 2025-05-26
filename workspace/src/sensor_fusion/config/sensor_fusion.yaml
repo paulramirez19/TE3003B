@@ -1,4 +1,4 @@
-/sensor_fusion:
+sensor_fusion:
   ros__parameters:
     process_noise_covariance: [
       0.0, 0.0, 0.0,
