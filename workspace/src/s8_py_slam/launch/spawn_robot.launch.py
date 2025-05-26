@@ -11,7 +11,7 @@ def generate_launch_description():
 
     # Path to the URDF file
     # robot_plugin or cylinder_plugin
-    urdf_plugin_path = os.path.join(pkg_share, 'urdf', 'cylinder_plugin.urdf')
+    urdf_plugin_path = os.path.join(pkg_share, 'urdf', 'robot_plugin.urdf')
 
     # Launch file for Gazebo
     gazebo_launch = os.path.join(
@@ -43,4 +43,10 @@ def generate_launch_description():
             ],
             output='screen'
         ),
+        Node(
+	    package='simulation',
+	    executable='odom_to_vel_exe', # This must match the name in setup.py entry_points
+            name='sim_odom_to_vel', # A unique name for the node instance
+	    output='screen'
+        )
     ])
