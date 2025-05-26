@@ -9,7 +9,7 @@ namespace control {
 
 class CubicSpline {
 public:
-    CubicSpline() = default;
+    CubicSpline();
 
     void SetTrajectoryDuration(double trajectory_duration);
     void SetBoundaryConditions(const Eigen::Matrix<double, 4, 1>& boundary_conditions);
@@ -19,12 +19,7 @@ private:
     double T_;
     Eigen::Matrix<double, 4, 1> boundary_conditions_;
     // clang-format off
-    Eigen::Matrix<double, 4, 4> matrix_{
-        {0.0, 0.0, 0.0, 1.0},
-        {std::pow(T_, 3.0), std::pow(T_, 2.0), T_, 1.0},
-        {0.0, 0.0, 1.0, 0.0},
-        {3 * std::pow(T_, 2.0), 2 * T_, 1.0, 0.0}
-    };
+    Eigen::Matrix<double, 4, 4> matrix_;
     // clang-format on
 };
 
