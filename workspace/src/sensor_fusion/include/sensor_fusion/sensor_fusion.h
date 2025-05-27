@@ -42,7 +42,6 @@ private:
 
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_pub_;
-    std::unique_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
 };
 
 } // namespace sensor_fusion

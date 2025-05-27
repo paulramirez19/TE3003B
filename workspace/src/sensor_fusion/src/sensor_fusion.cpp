@@ -41,7 +41,6 @@ SensorFusion::SensorFusion() : Node("sensor_fusion"), filter_{get_clock(), get_l
     timer_ = create_wall_timer(std::chrono::milliseconds{30},
                                std::bind(&SensorFusion::FusedSensorsCallback, this));
     odom_pub_ = create_publisher<nav_msgs::msg::Odometry>("/odom_filtered", 10);
-    tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 
     declare_parameter<std::vector<double>>("process_noise_covariance", std::vector<double>(9, 0.0));
     declare_parameter<std::vector<double>>("observation_noise_covariance", std::vector<double>(9, 0.0));
@@ -83,22 +82,6 @@ void SensorFusion::FusedSensorsCallback() {
         filtered_odom = filter_.Update(observations_.top());
         observations_.pop();
     }
-
-    geometry_msgs::msg::TransformStamped t;
-    t.header.stamp = get_clock()->now();
-    t.header.frame_id = "odom";
-    t.child_frame_id = "base_link";
-    // Position
-    t.transform.translation.x = filtered_odom.pose.pose.position.x;
-    t.transform.translation.y = filtered_odom.pose.pose.position.y;
-    t.transform.translation.z = 0.0;
-    // Orientation
-    t.transform.rotation.x = filtered_odom.pose.pose.orientation.x;
-    t.transform.rotation.y = filtered_odom.pose.pose.orientation.y;
-    t.transform.rotation.z = filtered_odom.pose.pose.orientation.z;
-    t.transform.rotation.w = filtered_odom.pose.pose.orientation.w;
-
-    tf_broadcaster_->sendTransform(t);
 
     RCLCPP_INFO(get_logger(), "x: %.6lf, y: %.6lf, heading: %.6lf",
                 filtered_odom.pose.pose.position.x, filtered_odom.pose.pose.position.y,
