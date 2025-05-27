@@ -1,0 +1,24 @@
+[0.832s] Invoking command in '/home/yahboom/TE3003B/simulation_workspace/src/s8_py_slam': PYTHONPATH=/home/yahboom/TE3003B/simulation_workspace/build/s8_py_slam/prefix_override:/home/yahboom/TE3003B/simulation_workspace/install/s8_py_slam/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/s8_py_slam build --build-base /home/yahboom/TE3003B/simulation_workspace/build/s8_py_slam/build install --record /home/yahboom/TE3003B/simulation_workspace/build/s8_py_slam/install.log --single-version-externally-managed
+[1.116s] running egg_info
+[1.117s] writing ../../build/s8_py_slam/s8_py_slam.egg-info/PKG-INFO
+[1.118s] writing dependency_links to ../../build/s8_py_slam/s8_py_slam.egg-info/dependency_links.txt
+[1.118s] writing entry points to ../../build/s8_py_slam/s8_py_slam.egg-info/entry_points.txt
+[1.119s] writing requirements to ../../build/s8_py_slam/s8_py_slam.egg-info/requires.txt
+[1.119s] writing top-level names to ../../build/s8_py_slam/s8_py_slam.egg-info/top_level.txt
+[1.157s] reading manifest file '../../build/s8_py_slam/s8_py_slam.egg-info/SOURCES.txt'
+[1.158s] writing manifest file '../../build/s8_py_slam/s8_py_slam.egg-info/SOURCES.txt'
+[1.159s] running build
+[1.159s] running build_py
+[1.159s] running install
+[1.161s] running install_lib
+[1.164s] running install_data
+[1.164s] copying launch/display_robot.launch.py -> /home/yahboom/TE3003B/simulation_workspace/install/s8_py_slam/share/s8_py_slam/launch
+[1.165s] running install_egg_info
+[1.167s] removing '/home/yahboom/TE3003B/simulation_workspace/install/s8_py_slam/lib/python3.8/site-packages/s8_py_slam-0.0.0-py3.8.egg-info' (and everything under it)
+[1.168s] Copying ../../build/s8_py_slam/s8_py_slam.egg-info to /home/yahboom/TE3003B/simulation_workspace/install/s8_py_slam/lib/python3.8/site-packages/s8_py_slam-0.0.0-py3.8.egg-info
+[1.169s] running install_scripts
+[1.190s] Installing map_terminal_printer_exe script to /home/yahboom/TE3003B/simulation_workspace/install/s8_py_slam/lib/s8_py_slam
+[1.190s] Installing pose_publisher_exe script to /home/yahboom/TE3003B/simulation_workspace/install/s8_py_slam/lib/s8_py_slam
+[1.190s] Installing relative_map_terminal_printer_exe script to /home/yahboom/TE3003B/simulation_workspace/install/s8_py_slam/lib/s8_py_slam
+[1.191s] writing list of installed files to '/home/yahboom/TE3003B/simulation_workspace/build/s8_py_slam/install.log'
+[1.215s] Invoked command in '/home/yahboom/TE3003B/simulation_workspace/src/s8_py_slam' returned '0': PYTHONPATH=/home/yahboom/TE3003B/simulation_workspace/build/s8_py_slam/prefix_override:/home/yahboom/TE3003B/simulation_workspace/install/s8_py_slam/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/s8_py_slam build --build-base /home/yahboom/TE3003B/simulation_workspace/build/s8_py_slam/build install --record /home/yahboom/TE3003B/simulation_workspace/build/s8_py_slam/install.log --single-version-externally-managed

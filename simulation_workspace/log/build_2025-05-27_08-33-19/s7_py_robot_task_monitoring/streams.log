@@ -1,0 +1,72 @@
+[2.850s] Invoking command in '/home/yahboom/TE3003B/simulation_workspace/src/s7_py_robot_task_monitoring': AMENT_PREFIX_PATH=/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/prefix_override:/home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/lib/python3.8/site-packages:/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/s7_py_robot_task_monitoring build --build-base /home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/build install --record /home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/install.log --single-version-externally-managed
+[3.531s] running egg_info
+[3.531s] creating ../../build/s7_py_robot_task_monitoring/s7_py_robot_task_monitoring.egg-info
+[3.532s] writing ../../build/s7_py_robot_task_monitoring/s7_py_robot_task_monitoring.egg-info/PKG-INFO
+[3.532s] writing dependency_links to ../../build/s7_py_robot_task_monitoring/s7_py_robot_task_monitoring.egg-info/dependency_links.txt
+[3.533s] writing entry points to ../../build/s7_py_robot_task_monitoring/s7_py_robot_task_monitoring.egg-info/entry_points.txt
+[3.533s] writing requirements to ../../build/s7_py_robot_task_monitoring/s7_py_robot_task_monitoring.egg-info/requires.txt
+[3.533s] writing top-level names to ../../build/s7_py_robot_task_monitoring/s7_py_robot_task_monitoring.egg-info/top_level.txt
+[3.537s] writing manifest file '../../build/s7_py_robot_task_monitoring/s7_py_robot_task_monitoring.egg-info/SOURCES.txt'
+[3.597s] reading manifest file '../../build/s7_py_robot_task_monitoring/s7_py_robot_task_monitoring.egg-info/SOURCES.txt'
+[3.602s] writing manifest file '../../build/s7_py_robot_task_monitoring/s7_py_robot_task_monitoring.egg-info/SOURCES.txt'
+[3.603s] running build
+[3.603s] running build_py
+[3.604s] creating /home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/build
+[3.604s] creating /home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/build/lib
+[3.604s] creating /home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/build/lib/s7_py_robot_task_monitoring
+[3.604s] copying s7_py_robot_task_monitoring/robots.py -> /home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/build/lib/s7_py_robot_task_monitoring
+[3.605s] copying s7_py_robot_task_monitoring/robot_status_logger.py -> /home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/build/lib/s7_py_robot_task_monitoring
+[3.605s] copying s7_py_robot_task_monitoring/__init__.py -> /home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/build/lib/s7_py_robot_task_monitoring
+[3.605s] copying s7_py_robot_task_monitoring/cylinders.py -> /home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/build/lib/s7_py_robot_task_monitoring
+[3.606s] running install
+[3.607s] running install_lib
+[3.610s] creating /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/lib/python3.8/site-packages/s7_py_robot_task_monitoring
+[3.610s] copying /home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/build/lib/s7_py_robot_task_monitoring/robots.py -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/lib/python3.8/site-packages/s7_py_robot_task_monitoring
+[3.611s] copying /home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/build/lib/s7_py_robot_task_monitoring/robot_status_logger.py -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/lib/python3.8/site-packages/s7_py_robot_task_monitoring
+[3.611s] copying /home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/build/lib/s7_py_robot_task_monitoring/__init__.py -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/lib/python3.8/site-packages/s7_py_robot_task_monitoring
+[3.612s] copying /home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/build/lib/s7_py_robot_task_monitoring/cylinders.py -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/lib/python3.8/site-packages/s7_py_robot_task_monitoring
+[3.614s] byte-compiling /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/lib/python3.8/site-packages/s7_py_robot_task_monitoring/robots.py to robots.cpython-38.pyc
+[3.618s] byte-compiling /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/lib/python3.8/site-packages/s7_py_robot_task_monitoring/robot_status_logger.py to robot_status_logger.cpython-38.pyc
+[3.620s] byte-compiling /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/lib/python3.8/site-packages/s7_py_robot_task_monitoring/__init__.py to __init__.cpython-38.pyc
+[3.621s] byte-compiling /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/lib/python3.8/site-packages/s7_py_robot_task_monitoring/cylinders.py to cylinders.cpython-38.pyc
+[3.622s] running install_data
+[3.626s] creating /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/ament_index
+[3.626s] creating /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/ament_index/resource_index
+[3.626s] creating /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/ament_index/resource_index/packages
+[3.627s] copying resource/s7_py_robot_task_monitoring -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/ament_index/resource_index/packages
+[3.627s] copying package.xml -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring
+[3.628s] creating /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/meshes
+[3.628s] copying meshes/right_back_wheel.STL -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/meshes
+[3.642s] copying meshes/left_front_wheel.STL -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/meshes
+[3.661s] copying meshes/right_front_wheel.STL -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/meshes
+[3.678s] copying meshes/camera_link.STL -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/meshes
+[3.696s] copying meshes/camera2_link.STL -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/meshes
+[3.700s] copying meshes/base_link.STL -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/meshes
+[3.736s] copying meshes/lidar_link.STL -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/meshes
+[3.743s] copying meshes/left_back_wheel.STL -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/meshes
+[3.762s] copying meshes/imu_link.STL -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/meshes
+[3.902s] creating /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/urdf
+[3.903s] copying urdf/robot1.urdf -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/urdf
+[3.903s] copying urdf/cylinder4.urdf -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/urdf
+[3.904s] copying urdf/robot2.urdf -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/urdf
+[3.905s] copying urdf/cylinder7.urdf -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/urdf
+[3.905s] copying urdf/cylinder6.urdf -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/urdf
+[3.906s] copying urdf/cylinder2.urdf -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/urdf
+[3.906s] copying urdf/cylinder8.urdf -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/urdf
+[3.907s] copying urdf/robot3.urdf -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/urdf
+[3.908s] copying urdf/cylinder1.urdf -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/urdf
+[3.908s] copying urdf/cylinder3.urdf -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/urdf
+[3.909s] copying urdf/cylinder5.urdf -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/urdf
+[3.909s] copying urdf/robot4.urdf -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/urdf
+[3.909s] creating /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/rviz
+[3.910s] copying rviz/robot_network.rviz -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/rviz
+[3.912s] creating /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/launch
+[3.913s] copying launch/robot_network_launch.py -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/share/s7_py_robot_task_monitoring/launch
+[3.914s] running install_egg_info
+[3.918s] Copying ../../build/s7_py_robot_task_monitoring/s7_py_robot_task_monitoring.egg-info to /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/lib/python3.8/site-packages/s7_py_robot_task_monitoring-0.0.0-py3.8.egg-info
+[3.922s] running install_scripts
+[3.962s] Installing cylinders_exe script to /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/lib/s7_py_robot_task_monitoring
+[3.962s] Installing robot_status_logger_exe script to /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/lib/s7_py_robot_task_monitoring
+[3.963s] Installing robots_exe script to /home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/lib/s7_py_robot_task_monitoring
+[3.963s] writing list of installed files to '/home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/install.log'
+[4.009s] Invoked command in '/home/yahboom/TE3003B/simulation_workspace/src/s7_py_robot_task_monitoring' returned '0': AMENT_PREFIX_PATH=/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/prefix_override:/home/yahboom/TE3003B/simulation_workspace/install/s7_py_robot_task_monitoring/lib/python3.8/site-packages:/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/s7_py_robot_task_monitoring build --build-base /home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/build install --record /home/yahboom/TE3003B/simulation_workspace/build/s7_py_robot_task_monitoring/install.log --single-version-externally-managed

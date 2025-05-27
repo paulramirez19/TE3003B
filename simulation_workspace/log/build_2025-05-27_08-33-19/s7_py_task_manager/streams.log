@@ -1,0 +1,37 @@
+[2.821s] Invoking command in '/home/yahboom/TE3003B/simulation_workspace/src/s7_py_task_manager': AMENT_PREFIX_PATH=/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/yahboom/TE3003B/simulation_workspace/build/s7_py_task_manager/prefix_override:/home/yahboom/TE3003B/simulation_workspace/install/s7_py_task_manager/lib/python3.8/site-packages:/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/s7_py_task_manager build --build-base /home/yahboom/TE3003B/simulation_workspace/build/s7_py_task_manager/build install --record /home/yahboom/TE3003B/simulation_workspace/build/s7_py_task_manager/install.log --single-version-externally-managed
+[3.504s] running egg_info
+[3.504s] creating ../../build/s7_py_task_manager/s7_py_task_manager.egg-info
+[3.505s] writing ../../build/s7_py_task_manager/s7_py_task_manager.egg-info/PKG-INFO
+[3.506s] writing dependency_links to ../../build/s7_py_task_manager/s7_py_task_manager.egg-info/dependency_links.txt
+[3.506s] writing entry points to ../../build/s7_py_task_manager/s7_py_task_manager.egg-info/entry_points.txt
+[3.506s] writing requirements to ../../build/s7_py_task_manager/s7_py_task_manager.egg-info/requires.txt
+[3.507s] writing top-level names to ../../build/s7_py_task_manager/s7_py_task_manager.egg-info/top_level.txt
+[3.510s] writing manifest file '../../build/s7_py_task_manager/s7_py_task_manager.egg-info/SOURCES.txt'
+[3.571s] reading manifest file '../../build/s7_py_task_manager/s7_py_task_manager.egg-info/SOURCES.txt'
+[3.573s] writing manifest file '../../build/s7_py_task_manager/s7_py_task_manager.egg-info/SOURCES.txt'
+[3.574s] running build
+[3.574s] running build_py
+[3.575s] creating /home/yahboom/TE3003B/simulation_workspace/build/s7_py_task_manager/build
+[3.575s] creating /home/yahboom/TE3003B/simulation_workspace/build/s7_py_task_manager/build/lib
+[3.576s] creating /home/yahboom/TE3003B/simulation_workspace/build/s7_py_task_manager/build/lib/s7_py_task_manager
+[3.577s] copying s7_py_task_manager/task_manager.py -> /home/yahboom/TE3003B/simulation_workspace/build/s7_py_task_manager/build/lib/s7_py_task_manager
+[3.577s] copying s7_py_task_manager/__init__.py -> /home/yahboom/TE3003B/simulation_workspace/build/s7_py_task_manager/build/lib/s7_py_task_manager
+[3.577s] running install
+[3.580s] running install_lib
+[3.585s] creating /home/yahboom/TE3003B/simulation_workspace/install/s7_py_task_manager/lib/python3.8/site-packages/s7_py_task_manager
+[3.585s] copying /home/yahboom/TE3003B/simulation_workspace/build/s7_py_task_manager/build/lib/s7_py_task_manager/task_manager.py -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_task_manager/lib/python3.8/site-packages/s7_py_task_manager
+[3.586s] copying /home/yahboom/TE3003B/simulation_workspace/build/s7_py_task_manager/build/lib/s7_py_task_manager/__init__.py -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_task_manager/lib/python3.8/site-packages/s7_py_task_manager
+[3.589s] byte-compiling /home/yahboom/TE3003B/simulation_workspace/install/s7_py_task_manager/lib/python3.8/site-packages/s7_py_task_manager/task_manager.py to task_manager.cpython-38.pyc
+[3.593s] byte-compiling /home/yahboom/TE3003B/simulation_workspace/install/s7_py_task_manager/lib/python3.8/site-packages/s7_py_task_manager/__init__.py to __init__.cpython-38.pyc
+[3.594s] running install_data
+[3.595s] creating /home/yahboom/TE3003B/simulation_workspace/install/s7_py_task_manager/share/ament_index
+[3.595s] creating /home/yahboom/TE3003B/simulation_workspace/install/s7_py_task_manager/share/ament_index/resource_index
+[3.596s] creating /home/yahboom/TE3003B/simulation_workspace/install/s7_py_task_manager/share/ament_index/resource_index/packages
+[3.596s] copying resource/s7_py_task_manager -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_task_manager/share/ament_index/resource_index/packages
+[3.597s] copying package.xml -> /home/yahboom/TE3003B/simulation_workspace/install/s7_py_task_manager/share/s7_py_task_manager
+[3.597s] running install_egg_info
+[3.602s] Copying ../../build/s7_py_task_manager/s7_py_task_manager.egg-info to /home/yahboom/TE3003B/simulation_workspace/install/s7_py_task_manager/lib/python3.8/site-packages/s7_py_task_manager-0.0.0-py3.8.egg-info
+[3.608s] running install_scripts
+[3.662s] Installing task_manager_exe script to /home/yahboom/TE3003B/simulation_workspace/install/s7_py_task_manager/lib/s7_py_task_manager
+[3.663s] writing list of installed files to '/home/yahboom/TE3003B/simulation_workspace/build/s7_py_task_manager/install.log'
+[3.733s] Invoked command in '/home/yahboom/TE3003B/simulation_workspace/src/s7_py_task_manager' returned '0': AMENT_PREFIX_PATH=/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/yahboom/TE3003B/simulation_workspace/build/s7_py_task_manager/prefix_override:/home/yahboom/TE3003B/simulation_workspace/install/s7_py_task_manager/lib/python3.8/site-packages:/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/s7_py_task_manager build --build-base /home/yahboom/TE3003B/simulation_workspace/build/s7_py_task_manager/build install --record /home/yahboom/TE3003B/simulation_workspace/build/s7_py_task_manager/install.log --single-version-externally-managed

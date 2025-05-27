@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from s7_robot_network_interface/msg/RobotStatus.msg
+// generated code does not contain a copyright notice
+
+#include "builtin_interfaces/msg/Time.idl"
+#include "geometry_msgs/msg/Pose2D.idl"
+
+module s7_robot_network_interface {
+  module msg {
+    struct RobotStatus {
+      builtin_interfaces::msg::Time timestamp;
+
+      int64 robot_id;
+
+      int64 task_stage;
+
+      geometry_msgs::msg::Pose2D pose;
+
+      boolean align_yaw;
+    };
+  };
+};

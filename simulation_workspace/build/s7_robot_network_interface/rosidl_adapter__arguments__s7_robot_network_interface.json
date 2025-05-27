@@ -1,0 +1,7 @@
+{
+  "package_name": "s7_robot_network_interface",
+  "non_idl_tuples": [
+    "/home/yahboom/TE3003B/simulation_workspace/src/s7_robot_network_interface:msg/RobotStatus.msg",
+    "/home/yahboom/TE3003B/simulation_workspace/src/s7_robot_network_interface:srv/GetTwoPoses.srv"
+  ]
+}

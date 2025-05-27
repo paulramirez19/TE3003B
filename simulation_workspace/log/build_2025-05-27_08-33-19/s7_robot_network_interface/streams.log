@@ -1,0 +1,258 @@
+[0.151s] Invoking command in '/home/yahboom/TE3003B/simulation_workspace/build/s7_robot_network_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/yahboom/TE3003B/workspace/install/simulation:/home/yahboom/TE3003B/workspace/install/s8_py_slam:/home/yahboom/dev_ws/install/yahboomcar_rviz:/home/yahboom/dev_ws/install/yahboomcar_nav:/home/yahboom/dev_ws/install/yahboomcar_multi:/home/yahboom/dev_ws/install/yahboomcar_description:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_voice_ctrl:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_visual:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_nav:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_mediapipe:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_linefollow:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_laser:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description_x1:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_ctrl:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_bringup:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_astra:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/robot_pose_publisher:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/laserscan_to_point_pulisher:/opt/ros/foxy /usr/bin/cmake /home/yahboom/TE3003B/simulation_workspace/src/s7_robot_network_interface -DCMAKE_INSTALL_PREFIX=/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface
+[0.473s] -- The C compiler identification is GNU 9.4.0
+[0.777s] -- The CXX compiler identification is GNU 9.4.0
+[0.809s] -- Check for working C compiler: /usr/bin/cc
+[1.216s] -- Check for working C compiler: /usr/bin/cc -- works
+[1.217s] -- Detecting C compiler ABI info
+[1.615s] -- Detecting C compiler ABI info - done
+[1.630s] -- Detecting C compile features
+[1.631s] -- Detecting C compile features - done
+[1.637s] -- Check for working CXX compiler: /usr/bin/c++
+[2.077s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[2.081s] -- Detecting CXX compiler ABI info
+[2.522s] -- Detecting CXX compiler ABI info - done
+[2.537s] -- Detecting CXX compile features
+[2.540s] -- Detecting CXX compile features - done
+[2.586s] -- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)
+[2.762s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[2.763s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[3.916s] -- Found builtin_interfaces: 1.0.0 (/opt/ros/foxy/share/builtin_interfaces/cmake)
+[4.228s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.359s] -- Found rosidl_adapter: 1.3.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[5.128s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[5.269s] -- Found FastRTPS: /opt/ros/foxy/include  
+[5.763s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[5.960s] -- Found geometry_msgs: 2.0.5 (/opt/ros/foxy/share/geometry_msgs/cmake)
+[6.179s] -- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)
+[6.360s] -- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+[7.047s] -- Found ament_cmake_ros: 0.9.2 (/opt/ros/foxy/share/ament_cmake_ros/cmake)
+[8.166s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[8.546s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[8.657s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") 
+[8.708s] -- Found python_cmake_module: 0.8.1 (/opt/ros/foxy/share/python_cmake_module/cmake)
+[8.851s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.8.so (found suitable version "3.8.10", minimum required is "3.5") 
+[8.851s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[8.851s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8
+[8.851s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so
+[8.947s] -- Found PythonExtra: .so  
+[9.326s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[9.667s] -- Added test 'lint_cmake' to check CMake code style
+[9.678s] -- Added test 'xmllint' to check XML markup files
+[9.715s] -- Configuring done
+[10.088s] -- Generating done
+[10.097s] -- Build files have been written to: /home/yahboom/TE3003B/simulation_workspace/build/s7_robot_network_interface
+[10.119s] Invoked command in '/home/yahboom/TE3003B/simulation_workspace/build/s7_robot_network_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/yahboom/TE3003B/workspace/install/simulation:/home/yahboom/TE3003B/workspace/install/s8_py_slam:/home/yahboom/dev_ws/install/yahboomcar_rviz:/home/yahboom/dev_ws/install/yahboomcar_nav:/home/yahboom/dev_ws/install/yahboomcar_multi:/home/yahboom/dev_ws/install/yahboomcar_description:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_voice_ctrl:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_visual:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_nav:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_mediapipe:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_linefollow:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_laser:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description_x1:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_ctrl:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_bringup:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_astra:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/robot_pose_publisher:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/laserscan_to_point_pulisher:/opt/ros/foxy /usr/bin/cmake /home/yahboom/TE3003B/simulation_workspace/src/s7_robot_network_interface -DCMAKE_INSTALL_PREFIX=/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface
+[10.139s] Invoking command in '/home/yahboom/TE3003B/simulation_workspace/build/s7_robot_network_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/yahboom/TE3003B/workspace/install/simulation:/home/yahboom/TE3003B/workspace/install/s8_py_slam:/home/yahboom/dev_ws/install/yahboomcar_rviz:/home/yahboom/dev_ws/install/yahboomcar_nav:/home/yahboom/dev_ws/install/yahboomcar_multi:/home/yahboom/dev_ws/install/yahboomcar_description:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_voice_ctrl:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_visual:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_nav:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_mediapipe:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_linefollow:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_laser:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description_x1:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_ctrl:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_bringup:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_astra:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/robot_pose_publisher:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/laserscan_to_point_pulisher:/opt/ros/foxy /usr/bin/cmake --build /home/yahboom/TE3003B/simulation_workspace/build/s7_robot_network_interface -- -j4 -l4
+[10.385s] [35m[1mScanning dependencies of target s7_robot_network_interface__cpp[0m
+[10.389s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[10.467s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[11.190s] [35m[1mScanning dependencies of target s7_robot_network_interface__rosidl_generator_c[0m
+[11.201s] [  5%] Built target s7_robot_network_interface__cpp
+[11.276s] [ 10%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[11.276s] [ 10%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[11.283s] [ 15%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[11.283s] [ 15%] [32mBuilding C object CMakeFiles/s7_robot_network_interface__rosidl_generator_c.dir/rosidl_generator_c/s7_robot_network_interface/msg/detail/robot_status__functions.c.o[0m
+[11.516s] [ 17%] [32mBuilding C object CMakeFiles/s7_robot_network_interface__rosidl_generator_c.dir/rosidl_generator_c/s7_robot_network_interface/srv/detail/get_two_poses__functions.c.o[0m
+[11.755s] [ 20%] [32m[1mLinking C shared library libs7_robot_network_interface__rosidl_generator_c.so[0m
+[11.827s] [35m[1mScanning dependencies of target s7_robot_network_interface__rosidl_typesupport_cpp[0m
+[11.920s] [ 23%] [32mBuilding CXX object CMakeFiles/s7_robot_network_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/s7_robot_network_interface/msg/robot_status__type_support.cpp.o[0m
+[11.955s] [35m[1mScanning dependencies of target s7_robot_network_interface__rosidl_typesupport_introspection_cpp[0m
+[12.005s] [35m[1mScanning dependencies of target s7_robot_network_interface__rosidl_typesupport_fastrtps_cpp[0m
+[12.023s] [ 23%] Built target s7_robot_network_interface__rosidl_generator_c
+[12.066s] [ 25%] [32mBuilding CXX object CMakeFiles/s7_robot_network_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/s7_robot_network_interface/msg/detail/robot_status__type_support.cpp.o[0m
+[12.083s] [ 28%] [32mBuilding CXX object CMakeFiles/s7_robot_network_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/s7_robot_network_interface/srv/get_two_poses__type_support.cpp.o[0m
+[12.151s] [ 30%] [32mBuilding CXX object CMakeFiles/s7_robot_network_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/s7_robot_network_interface/msg/detail/dds_fastrtps/robot_status__type_support.cpp.o[0m
+[12.692s] [ 33%] [32mBuilding CXX object CMakeFiles/s7_robot_network_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/s7_robot_network_interface/srv/detail/dds_fastrtps/get_two_poses__type_support.cpp.o[0m
+[12.889s] [ 35%] [32m[1mLinking CXX shared library libs7_robot_network_interface__rosidl_typesupport_cpp.so[0m
+[12.893s] [ 38%] [32mBuilding CXX object CMakeFiles/s7_robot_network_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/s7_robot_network_interface/srv/detail/get_two_poses__type_support.cpp.o[0m
+[13.177s] [ 38%] Built target s7_robot_network_interface__rosidl_typesupport_cpp
+[13.229s] [ 41%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[13.267s] [ 43%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[13.734s] [ 46%] [32m[1mLinking CXX shared library libs7_robot_network_interface__rosidl_typesupport_introspection_cpp.so[0m
+[13.771s] [ 48%] [32m[1mLinking CXX shared library libs7_robot_network_interface__rosidl_typesupport_fastrtps_cpp.so[0m
+[13.835s] [35m[1mScanning dependencies of target s7_robot_network_interface__rosidl_typesupport_c[0m
+[13.933s] [ 51%] [32mBuilding CXX object CMakeFiles/s7_robot_network_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/s7_robot_network_interface/msg/robot_status__type_support.cpp.o[0m
+[13.956s] [35m[1mScanning dependencies of target s7_robot_network_interface__rosidl_typesupport_introspection_c[0m
+[14.062s] [ 53%] [32mBuilding C object CMakeFiles/s7_robot_network_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/s7_robot_network_interface/msg/detail/robot_status__type_support.c.o[0m
+[14.109s] [ 56%] [32mBuilding CXX object CMakeFiles/s7_robot_network_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/s7_robot_network_interface/srv/get_two_poses__type_support.cpp.o[0m
+[14.124s] [ 56%] Built target s7_robot_network_interface__rosidl_typesupport_introspection_cpp
+[14.195s] [ 58%] [32mBuilding C object CMakeFiles/s7_robot_network_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/s7_robot_network_interface/srv/detail/get_two_poses__type_support.c.o[0m
+[14.250s] [ 58%] Built target s7_robot_network_interface__rosidl_typesupport_fastrtps_cpp
+[14.291s] [ 61%] [32m[1mLinking CXX shared library libs7_robot_network_interface__rosidl_typesupport_c.so[0m
+[14.324s] [ 64%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[14.389s] [ 66%] [32m[1mLinking C shared library libs7_robot_network_interface__rosidl_typesupport_introspection_c.so[0m
+[14.581s] [ 66%] Built target s7_robot_network_interface__rosidl_typesupport_c
+[14.633s] [ 66%] Built target s7_robot_network_interface__rosidl_typesupport_introspection_c
+[14.914s] [35m[1mScanning dependencies of target s7_robot_network_interface__rosidl_typesupport_fastrtps_c[0m
+[15.059s] [ 69%] [32mBuilding CXX object CMakeFiles/s7_robot_network_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/s7_robot_network_interface/msg/detail/robot_status__type_support_c.cpp.o[0m
+[15.064s] [ 71%] [32mBuilding CXX object CMakeFiles/s7_robot_network_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/s7_robot_network_interface/srv/detail/get_two_poses__type_support_c.cpp.o[0m
+[15.973s] [ 74%] [32m[1mLinking CXX shared library libs7_robot_network_interface__rosidl_typesupport_fastrtps_c.so[0m
+[16.422s] [ 74%] Built target s7_robot_network_interface__rosidl_typesupport_fastrtps_c
+[16.490s] [35m[1mScanning dependencies of target s7_robot_network_interface[0m
+[16.560s] [ 74%] Built target s7_robot_network_interface
+[16.629s] [35m[1mScanning dependencies of target s7_robot_network_interface__py[0m
+[16.702s] [ 76%] [34m[1mGenerating Python code for ROS interfaces[0m
+[17.762s] [ 76%] Built target s7_robot_network_interface__py
+[17.832s] [35m[1mScanning dependencies of target s7_robot_network_interface__python[0m
+[18.059s] [ 79%] [32mBuilding C object CMakeFiles/s7_robot_network_interface__python.dir/rosidl_generator_py/s7_robot_network_interface/msg/_robot_status_s.c.o[0m
+[18.062s] [ 82%] [32mBuilding C object CMakeFiles/s7_robot_network_interface__python.dir/rosidl_generator_py/s7_robot_network_interface/srv/_get_two_poses_s.c.o[0m
+[18.455s] [ 84%] [32m[1mLinking C shared library rosidl_generator_py/s7_robot_network_interface/libs7_robot_network_interface__python.so[0m
+[18.726s] [ 84%] Built target s7_robot_network_interface__python
+[18.798s] [35m[1mScanning dependencies of target s7_robot_network_interface__rosidl_typesupport_c__pyext[0m
+[18.798s] [35m[1mScanning dependencies of target s7_robot_network_interface__rosidl_typesupport_fastrtps_c__pyext[0m
+[18.800s] [35m[1mScanning dependencies of target s7_robot_network_interface__rosidl_typesupport_introspection_c__pyext[0m
+[18.924s] [ 87%] [32mBuilding C object CMakeFiles/s7_robot_network_interface__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/s7_robot_network_interface/_s7_robot_network_interface_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[18.932s] [ 89%] [32mBuilding C object CMakeFiles/s7_robot_network_interface__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/s7_robot_network_interface/_s7_robot_network_interface_s.ep.rosidl_typesupport_c.c.o[0m
+[18.949s] [ 92%] [32mBuilding C object CMakeFiles/s7_robot_network_interface__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/s7_robot_network_interface/_s7_robot_network_interface_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[19.272s] [ 94%] [32m[1mLinking C shared library rosidl_generator_py/s7_robot_network_interface/s7_robot_network_interface_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so[0m
+[19.273s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/s7_robot_network_interface/s7_robot_network_interface_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so[0m
+[19.322s] [100%] [32m[1mLinking CXX shared library rosidl_generator_py/s7_robot_network_interface/s7_robot_network_interface_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so[0m
+[19.536s] [100%] Built target s7_robot_network_interface__rosidl_typesupport_c__pyext
+[19.540s] [100%] Built target s7_robot_network_interface__rosidl_typesupport_introspection_c__pyext
+[19.728s] [100%] Built target s7_robot_network_interface__rosidl_typesupport_fastrtps_c__pyext
+[19.795s] Invoked command in '/home/yahboom/TE3003B/simulation_workspace/build/s7_robot_network_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/yahboom/TE3003B/workspace/install/simulation:/home/yahboom/TE3003B/workspace/install/s8_py_slam:/home/yahboom/dev_ws/install/yahboomcar_rviz:/home/yahboom/dev_ws/install/yahboomcar_nav:/home/yahboom/dev_ws/install/yahboomcar_multi:/home/yahboom/dev_ws/install/yahboomcar_description:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_voice_ctrl:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_visual:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_nav:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_mediapipe:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_linefollow:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_laser:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description_x1:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_ctrl:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_bringup:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_astra:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/robot_pose_publisher:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/laserscan_to_point_pulisher:/opt/ros/foxy /usr/bin/cmake --build /home/yahboom/TE3003B/simulation_workspace/build/s7_robot_network_interface -- -j4 -l4
+[20.553s] Invoking command in '/home/yahboom/TE3003B/simulation_workspace/build/s7_robot_network_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/yahboom/TE3003B/workspace/install/simulation:/home/yahboom/TE3003B/workspace/install/s8_py_slam:/home/yahboom/dev_ws/install/yahboomcar_rviz:/home/yahboom/dev_ws/install/yahboomcar_nav:/home/yahboom/dev_ws/install/yahboomcar_multi:/home/yahboom/dev_ws/install/yahboomcar_description:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_voice_ctrl:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_visual:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_nav:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_mediapipe:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_linefollow:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_laser:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description_x1:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_ctrl:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_bringup:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_astra:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/robot_pose_publisher:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/laserscan_to_point_pulisher:/opt/ros/foxy /usr/bin/cmake --install /home/yahboom/TE3003B/simulation_workspace/build/s7_robot_network_interface
+[20.596s] -- Install configuration: ""
+[20.596s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/ament_index/resource_index/rosidl_interfaces/s7_robot_network_interface
+[20.597s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface
+[20.597s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg
+[20.598s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/rosidl_generator_c__visibility_control.h
+[20.599s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail
+[20.599s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail/robot_status__functions.c
+[20.600s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail/robot_status__struct.h
+[20.601s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail/robot_status__type_support.h
+[20.601s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail/robot_status__functions.h
+[20.602s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/robot_status.h
+[20.603s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv
+[20.604s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/get_two_poses.h
+[20.604s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail
+[20.605s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail/get_two_poses__struct.h
+[20.606s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail/get_two_poses__functions.c
+[20.606s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail/get_two_poses__type_support.h
+[20.607s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail/get_two_poses__functions.h
+[20.608s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/environment/library_path.sh
+[20.611s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/environment/library_path.dsv
+[20.612s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/libs7_robot_network_interface__rosidl_generator_c.so
+[20.617s] -- Set runtime path of "/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/libs7_robot_network_interface__rosidl_generator_c.so" to ""
+[20.618s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface
+[20.618s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg
+[20.618s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail
+[20.619s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail/robot_status__rosidl_typesupport_fastrtps_c.h
+[20.619s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[20.620s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv
+[20.620s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail
+[20.620s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail/get_two_poses__rosidl_typesupport_fastrtps_c.h
+[20.622s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/libs7_robot_network_interface__rosidl_typesupport_fastrtps_c.so
+[20.627s] -- Set runtime path of "/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/libs7_robot_network_interface__rosidl_typesupport_fastrtps_c.so" to ""
+[20.628s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface
+[20.628s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg
+[20.628s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail
+[20.629s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail/robot_status__rosidl_typesupport_fastrtps_cpp.hpp
+[20.629s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail/dds_fastrtps
+[20.630s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[20.630s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv
+[20.631s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail
+[20.631s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail/get_two_poses__rosidl_typesupport_fastrtps_cpp.hpp
+[20.631s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail/dds_fastrtps
+[20.632s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/libs7_robot_network_interface__rosidl_typesupport_fastrtps_cpp.so
+[20.638s] -- Set runtime path of "/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/libs7_robot_network_interface__rosidl_typesupport_fastrtps_cpp.so" to ""
+[20.639s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface
+[20.639s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg
+[20.639s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail
+[20.639s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail/robot_status__rosidl_typesupport_introspection_c.h
+[20.640s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail/robot_status__type_support.c
+[20.640s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[20.641s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv
+[20.642s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail
+[20.642s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail/get_two_poses__type_support.c
+[20.642s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail/get_two_poses__rosidl_typesupport_introspection_c.h
+[20.643s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/libs7_robot_network_interface__rosidl_typesupport_introspection_c.so
+[20.648s] -- Set runtime path of "/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/libs7_robot_network_interface__rosidl_typesupport_introspection_c.so" to ""
+[20.649s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/libs7_robot_network_interface__rosidl_typesupport_c.so
+[20.653s] -- Set runtime path of "/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/libs7_robot_network_interface__rosidl_typesupport_c.so" to ""
+[20.654s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface
+[20.654s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg
+[20.655s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail
+[20.655s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail/robot_status__struct.hpp
+[20.655s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail/robot_status__builder.hpp
+[20.656s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail/robot_status__traits.hpp
+[20.657s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/robot_status.hpp
+[20.658s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv
+[20.658s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail
+[20.659s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail/get_two_poses__builder.hpp
+[20.659s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail/get_two_poses__struct.hpp
+[20.660s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail/get_two_poses__traits.hpp
+[20.660s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/get_two_poses.hpp
+[20.661s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface
+[20.662s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg
+[20.662s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail
+[20.663s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail/robot_status__rosidl_typesupport_introspection_cpp.hpp
+[20.663s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/msg/detail/robot_status__type_support.cpp
+[20.663s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv
+[20.664s] -- Up-to-date: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail
+[20.664s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail/get_two_poses__rosidl_typesupport_introspection_cpp.hpp
+[20.665s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/include/s7_robot_network_interface/srv/detail/get_two_poses__type_support.cpp
+[20.666s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/libs7_robot_network_interface__rosidl_typesupport_introspection_cpp.so
+[20.671s] -- Set runtime path of "/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/libs7_robot_network_interface__rosidl_typesupport_introspection_cpp.so" to ""
+[20.672s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/libs7_robot_network_interface__rosidl_typesupport_cpp.so
+[20.677s] -- Set runtime path of "/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/libs7_robot_network_interface__rosidl_typesupport_cpp.so" to ""
+[20.677s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/environment/pythonpath.sh
+[20.678s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/environment/pythonpath.dsv
+[20.679s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages/s7_robot_network_interface/__init__.py
+[20.816s] Compiling '/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages/s7_robot_network_interface/__init__.py'...
+[20.821s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages/s7_robot_network_interface/msg
+[20.822s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages/s7_robot_network_interface/msg/_robot_status_s.c
+[20.823s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages/s7_robot_network_interface/msg/_robot_status.py
+[20.823s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages/s7_robot_network_interface/msg/__init__.py
+[20.824s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages/s7_robot_network_interface/srv
+[20.825s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages/s7_robot_network_interface/srv/_get_two_poses_s.c
+[20.826s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages/s7_robot_network_interface/srv/__init__.py
+[20.827s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages/s7_robot_network_interface/srv/_get_two_poses.py
+[20.828s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages/s7_robot_network_interface/s7_robot_network_interface_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so
+[20.833s] -- Set runtime path of "/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages/s7_robot_network_interface/s7_robot_network_interface_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so" to ""
+[20.834s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages/s7_robot_network_interface/s7_robot_network_interface_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so
+[20.839s] -- Set runtime path of "/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages/s7_robot_network_interface/s7_robot_network_interface_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so" to ""
+[20.840s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages/s7_robot_network_interface/s7_robot_network_interface_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so
+[20.845s] -- Set runtime path of "/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/python3.8/site-packages/s7_robot_network_interface/s7_robot_network_interface_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so" to ""
+[20.845s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/libs7_robot_network_interface__python.so
+[20.850s] -- Set runtime path of "/home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/lib/libs7_robot_network_interface__python.so" to ""
+[20.851s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/msg/RobotStatus.idl
+[20.852s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/srv/GetTwoPoses.idl
+[20.852s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/msg/RobotStatus.msg
+[20.853s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/srv/GetTwoPoses.srv
+[20.854s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/srv/GetTwoPoses_Request.msg
+[20.855s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/srv/GetTwoPoses_Response.msg
+[20.856s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/ament_index/resource_index/package_run_dependencies/s7_robot_network_interface
+[20.858s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/ament_index/resource_index/parent_prefix_path/s7_robot_network_interface
+[20.859s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/environment/ament_prefix_path.sh
+[20.859s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/environment/ament_prefix_path.dsv
+[20.860s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/environment/path.sh
+[20.861s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/environment/path.dsv
+[20.862s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/local_setup.bash
+[20.863s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/local_setup.sh
+[20.863s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/local_setup.zsh
+[20.864s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/local_setup.dsv
+[20.865s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/package.dsv
+[20.866s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/ament_index/resource_index/packages/s7_robot_network_interface
+[20.867s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/s7_robot_network_interface__rosidl_generator_cExport.cmake
+[20.868s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/s7_robot_network_interface__rosidl_generator_cExport-noconfig.cmake
+[20.869s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/s7_robot_network_interface__rosidl_typesupport_introspection_cExport.cmake
+[20.871s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/s7_robot_network_interface__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[20.872s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/s7_robot_network_interface__rosidl_typesupport_cExport.cmake
+[20.873s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/s7_robot_network_interface__rosidl_typesupport_cExport-noconfig.cmake
+[20.874s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/s7_robot_network_interface__rosidl_generator_cppExport.cmake
+[20.875s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/s7_robot_network_interface__rosidl_typesupport_introspection_cppExport.cmake
+[20.875s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/s7_robot_network_interface__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[20.877s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/s7_robot_network_interface__rosidl_typesupport_cppExport.cmake
+[20.877s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/s7_robot_network_interface__rosidl_typesupport_cppExport-noconfig.cmake
+[20.878s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/rosidl_cmake-extras.cmake
+[20.879s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/ament_cmake_export_dependencies-extras.cmake
+[20.880s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/ament_cmake_export_libraries-extras.cmake
+[20.881s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/ament_cmake_export_targets-extras.cmake
+[20.882s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/ament_cmake_export_include_directories-extras.cmake
+[20.883s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[20.884s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[20.885s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/s7_robot_network_interfaceConfig.cmake
+[20.886s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/cmake/s7_robot_network_interfaceConfig-version.cmake
+[20.887s] -- Installing: /home/yahboom/TE3003B/simulation_workspace/install/s7_robot_network_interface/share/s7_robot_network_interface/package.xml
+[20.902s] Invoked command in '/home/yahboom/TE3003B/simulation_workspace/build/s7_robot_network_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/yahboom/TE3003B/workspace/install/simulation:/home/yahboom/TE3003B/workspace/install/s8_py_slam:/home/yahboom/dev_ws/install/yahboomcar_rviz:/home/yahboom/dev_ws/install/yahboomcar_nav:/home/yahboom/dev_ws/install/yahboomcar_multi:/home/yahboom/dev_ws/install/yahboomcar_description:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_voice_ctrl:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_visual:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_nav:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_mediapipe:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_linefollow:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_laser:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description_x1:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_description:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_ctrl:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_bringup:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/yahboomcar_astra:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/robot_pose_publisher:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/laserscan_to_point_pulisher:/opt/ros/foxy /usr/bin/cmake --install /home/yahboom/TE3003B/simulation_workspace/build/s7_robot_network_interface

@@ -1,0 +1,14 @@
+source;share/s7_robot_network_interface/hook/cmake_prefix_path.ps1
+source;share/s7_robot_network_interface/hook/cmake_prefix_path.dsv
+source;share/s7_robot_network_interface/hook/cmake_prefix_path.sh
+source;share/s7_robot_network_interface/hook/ld_library_path_lib.ps1
+source;share/s7_robot_network_interface/hook/ld_library_path_lib.dsv
+source;share/s7_robot_network_interface/hook/ld_library_path_lib.sh
+source;share/s7_robot_network_interface/hook/pythonpath.ps1
+source;share/s7_robot_network_interface/hook/pythonpath.dsv
+source;share/s7_robot_network_interface/hook/pythonpath.sh
+source;share/s7_robot_network_interface/local_setup.bash
+source;share/s7_robot_network_interface/local_setup.dsv
+source;share/s7_robot_network_interface/local_setup.ps1
+source;share/s7_robot_network_interface/local_setup.sh
+source;share/s7_robot_network_interface/local_setup.zsh
