@@ -25,13 +25,13 @@ Eigen::Matrix<double, 3, 3> H() {
 }
 
 Eigen::Matrix<double, 3, 2> B(const Eigen::Matrix<double, 3, 1>& x) {
-    // clang-format off
-    return Eigen::Matrix<double, 3, 2>{
-        {std::cos(x(2, 0)), -kH * std::sin(x(2, 0))},
-        {std::sin(x(2, 0)),  kH * std::cos(x(2, 0))},
-        {0.0, 1.0}
-    };
-    // clang-format on
+    Eigen::Matrix<double, 3, 2> B_internal;
+
+    B_internal << std::cos(x(2, 0)), -kH * std::sin(x(2, 0)),
+                std::sin(x(2, 0)),  kH * std::cos(x(2, 0)),
+        0.0, 1.0;
+
+    return B_internal;
 }
 
 Eigen::Matrix<double, 3, 3> F(const Eigen::Matrix<double, 3, 1> x,
