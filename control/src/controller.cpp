@@ -69,6 +69,12 @@ Controller::Controller() : Node("controller"), pose_prev_{false, nav_msgs::msg::
     declare_parameter<double>("y_gain", 1.0);
     declare_parameter<double>("theta_gain", 1.0);
     declare_parameter<double>("trajectory_duration", 10.0);
+
+    for (std::size_t state_var_idx = 0; state_var_idx < cubic_splines_coeffs_.size();
+         ++state_var_idx) {
+        cubic_splines_coeffs_[state_var_idx].SetTrajectoryDuration(
+                get_parameter("trajectory_duration").as_double());
+    }
 }
 
 void Controller::OdometryCallback(const nav_msgs::msg::Odometry::SharedPtr odom) {
@@ -91,6 +97,7 @@ void Controller::ControllerCallback() {
         SetBoundaryConditions();
     }
     const rclcpp::Duration time = get_clock()->now() - initial_time_;
+    // Coefficients are not working. Let's see if we hit any of the conditions.
     const std::pair<double, double> x_kinematics =
             GetKinematics(cubic_splines_coeffs_[0].GetCoefficients(), time.seconds());
     const std::pair<double, double> y_kinematics =
@@ -110,7 +117,7 @@ void Controller::ControllerCallback() {
     ctrl.linear.y = u(0, 0) * std::sin(theta);
     ctrl.angular.z = u(1, 0);
 
-    RCLCPP_INFO(get_logger(), "linear_velocity: %g, angular_velocity: %g", u(0, 0), u(1, 0));
+    RCLCPP_INFO(get_logger(), "linear_velocity: %.6lf, angular_velocity: %.6lf", u(0, 0), u(1, 0));
 
     ctrl_pub_->publish(ctrl);
 }

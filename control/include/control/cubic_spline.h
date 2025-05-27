@@ -4,6 +4,7 @@
 #include <chrono>
 #include <cmath>
 #include <eigen3/Eigen/Core>
+#include "rclcpp/logger.hpp"
 
 namespace control {
 
@@ -16,6 +17,7 @@ public:
     Eigen::Matrix<double, 4, 1> GetCoefficients() const;
 
 private:
+    rclcpp::Logger logger_;
     double T_;
     Eigen::Matrix<double, 4, 1> boundary_conditions_;
     // clang-format off
