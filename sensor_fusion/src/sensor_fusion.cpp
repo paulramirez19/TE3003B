@@ -25,7 +25,7 @@ double GetYawFromOdometry(const nav_msgs::msg::Odometry& odom) {
 
 } // namespace
 
-SensorFusion::SensorFusion() : Node("sensor_fusion"), filter_{get_clock(), get_logger()} {
+SensorFusion::SensorFusion() : Node("sensor_fusion"), filter_{get_clock()} {
     odom_sub_ =
             create_subscription<nav_msgs::msg::Odometry>("/odom_raw", 10,
                                                          std::bind(&SensorFusion::OdometryCallback,
