@@ -9,6 +9,7 @@
 #include "rclcpp/duration.hpp"
 #include "rclcpp/time.hpp"
 #include "rclcpp/rclcpp.hpp"
+#include "rclcpp/logger.hpp"
 #include "tf2/LinearMath/Matrix3x3.h"
 #include "tf2/LinearMath/Quaternion.h"
 #include "tf2/utils.h"
@@ -93,8 +94,8 @@ Eigen::Matrix<double, 3, 3> ConvertVectorToMatrix(const std::vector<double>& vec
 
 } // namespace
 
-ExtendedKalmanFilter::ExtendedKalmanFilter(const rclcpp::Clock::SharedPtr& clock, const rclcpp::Logger& logger)
-      : clock_{clock}, logger_{logger}, prev_time_{clock_->now()} {}
+ExtendedKalmanFilter::ExtendedKalmanFilter(const rclcpp::Clock::SharedPtr& clock)
+      : clock_{clock}, logger_{rclcpp::get_logger("sensor_fusion")}, prev_time_{clock_->now()} {}
 
 nav_msgs::msg::Odometry ExtendedKalmanFilter::Predict(const rclcpp::Time& time,
                                                       const Eigen::Matrix<double, 2, 1>& control) {
