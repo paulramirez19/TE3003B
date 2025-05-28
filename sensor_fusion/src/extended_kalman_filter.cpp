@@ -3,6 +3,7 @@
 #include <array>
 #include <eigen3/Eigen/Core>
 #include <eigen3/Eigen/Dense>
+#include <limits>
 
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "nav_msgs/msg/odometry.hpp"
@@ -18,6 +19,7 @@ namespace sensor_fusion {
 namespace {
 
 constexpr double kH{0.10}; // meters
+constexpr double kEpsilon = 4 * std::numeric_limits<double>::epsilon();
 
 Eigen::Matrix<double, 3, 3> H() {
     Eigen::Matrix<double, 3, 3> H_internal;
@@ -44,7 +46,6 @@ Eigen::Matrix<double, 3, 3> F(const Eigen::Matrix<double, 3, 1> x,
         0.0, 0.0, 0.0;
 
     return F_internal;
-    // clang-format on
 }
 
 nav_msgs::msg::Odometry BuildOdometryMessage(const rclcpp::Time& time,
@@ -118,7 +119,11 @@ nav_msgs::msg::Odometry ExtendedKalmanFilter::Update(const Observation& observat
     // clang-format off
     const Eigen::Matrix<double, 3, 1> obser_state = ConvertObservationToState(observation);
     const Eigen::Matrix<double, 3, 1> y = (prev_state_ - obser_state);
+    ++counter_;
     const Eigen::Matrix<double, 3, 3> S = H() * prev_covariance_ * (H().transpose()) + R_;
+    if (std::abs(S.determinant()) < kEpsilon) {
+        RCLCPP_INFO_STREAM(logger_, "counter: " << counter_ << ", prev_covariance_:\n" << prev_covariance_ << "S:\n" << S);
+    }
     const Eigen::Matrix<double, 3, 3> K = prev_covariance_ * (H().transpose()) * (S.inverse());
     prev_state_ = prev_state_ + K * y;
     const Eigen::Matrix<double, 3, 3> I = Eigen::Matrix<double, 3, 3>::Identity();
