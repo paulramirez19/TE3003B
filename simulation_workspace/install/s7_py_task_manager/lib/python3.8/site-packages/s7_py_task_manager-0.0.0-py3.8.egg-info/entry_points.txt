@@ -1,3 +1,0 @@
-[console_scripts]
-task_manager_exe = s7_py_task_manager.task_manager:main
-

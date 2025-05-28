@@ -1,6 +1,0 @@
-msg/RobotStatus.idl
-msg/RobotStatus.msg
-srv/GetTwoPoses.idl
-srv/GetTwoPoses.srv
-srv/GetTwoPoses_Request.msg
-srv/GetTwoPoses_Response.msg

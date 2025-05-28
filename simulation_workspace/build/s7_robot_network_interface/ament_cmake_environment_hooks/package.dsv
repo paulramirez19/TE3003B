@@ -1,4 +1,0 @@
-source;share/s7_robot_network_interface/local_setup.bash
-source;share/s7_robot_network_interface/local_setup.dsv
-source;share/s7_robot_network_interface/local_setup.sh
-source;share/s7_robot_network_interface/local_setup.zsh

@@ -1,3 +1,0 @@
-
-geometry_msgs/Pose2D pickup_pose
-geometry_msgs/Pose2D delivery_pose
