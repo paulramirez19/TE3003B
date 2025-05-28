@@ -27,6 +27,7 @@ public:
 private:
     const rclcpp::Clock::SharedPtr& clock_;
     rclcpp::Logger logger_;
+    std::size_t counter_;
     // Transitions are from k - 1 to k where k - 1 is denoted by "prev"
     rclcpp::Time prev_time_;
     Eigen::Matrix<double, 3, 1> prev_state_;
