@@ -1,6 +1,3 @@
 workspace/build
 workspace/log
 workspace/install
-simulation_workspace/build
-simulation_workspace/log
-simulation_workspace/install
