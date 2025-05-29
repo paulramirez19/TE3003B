@@ -23,6 +23,25 @@ double GetYawFromOdometry(const nav_msgs::msg::Odometry& odom) {
     return tf2::getYaw<tf2::Quaternion>(quat);
 }
 
+geometry_msgs::msg::TransformStamped BuildTransformFromOdometry(const nav_msgs::msg::Odometry& odom) {
+    geometry_msgs::msg::TransformStamped t;
+
+    t.header.stamp = odom.header.stamp;
+    t.header.frame_id = odom.header.frame_id;
+    t.child_frame_id = odom.child_frame_id;
+
+    t.transform.translation.x = odom.pose.pose.position.x;
+    t.transform.translation.y = odom.pose.pose.position.y;
+    t.transform.translation.z = 0.0;
+    
+    t.transform.rotation.x = odom.pose.pose.orientation.x;
+    t.transform.rotation.y = odom.pose.pose.orientation.y;
+    t.transform.rotation.z = odom.pose.pose.orientation.z;
+    t.transform.rotation.w = odom.pose.pose.orientation.w;
+
+    return t;
+}
+
 } // namespace
 
 SensorFusion::SensorFusion() : Node("sensor_fusion"), filter_{get_clock()} {
@@ -41,6 +60,8 @@ SensorFusion::SensorFusion() : Node("sensor_fusion"), filter_{get_clock()} {
     timer_ = create_wall_timer(std::chrono::milliseconds{30},
                                std::bind(&SensorFusion::FusedSensorsCallback, this));
     odom_pub_ = create_publisher<nav_msgs::msg::Odometry>("/odom_filtered", 10);
+
+    tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 
     declare_parameter<std::vector<double>>("process_noise_covariance", std::vector<double>(9, 0.0));
     declare_parameter<std::vector<double>>("observation_noise_covariance", std::vector<double>(9, 0.0));
@@ -87,6 +108,8 @@ void SensorFusion::FusedSensorsCallback() {
                 filtered_odom.pose.pose.position.x, filtered_odom.pose.pose.position.y,
                 GetYawFromOdometry(filtered_odom));
     odom_pub_->publish(filtered_odom);
+
+    tf_broadcaster_->sendTransform(BuildTransformFromOdometry(filtered_odom));
 }
 
 } // namespace sensor_fusion
