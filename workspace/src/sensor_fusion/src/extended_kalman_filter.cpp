@@ -54,6 +54,8 @@ nav_msgs::msg::Odometry BuildOdometryMessage(const rclcpp::Time& time,
     nav_msgs::msg::Odometry odom;
 
     odom.header.stamp = time;
+    odom.header.frame_id = "odom";
+    odom.child_frame_id = "base_footprint";
 
     odom.pose.pose.position.x = x(0, 0);
     odom.pose.pose.position.y = x(1, 0);
