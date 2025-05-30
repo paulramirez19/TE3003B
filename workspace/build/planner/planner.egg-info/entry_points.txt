@@ -1,5 +1,0 @@
-[console_scripts]
-custom_astar_planner_node = planner.custom_astar_planner_node:main
-static_map_publisher_node = planner.static_map_publisher_node:main
-test_robot_pose_odom_publisher = test_publishers.test_robot_pose_odom_publisher:main
-
