@@ -1,0 +1,6 @@
+input_control:
+  ros__parameters:
+    x_linear: 1.0
+    y_linear: 1.0
+    angular_velocity: 0.05
+    timeout: 0.5 # seconds
