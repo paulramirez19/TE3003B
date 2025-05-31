@@ -17,7 +17,7 @@ ros2 launch slam slam_launch.py
 ros2 launch control control_launch.py
 ros2 launch sensor_fusion sensor_fusion_launch.py
 
-
+ros2 launch filter_tuning filter_tuning_launch.py
 ros2 run yahboomcar_ctrl yahboom_keyboard
 
 ros2 topic pub /desired_position nav_msgs/msg/Odometry '{header: {frame_id: "odom"}, pose: {pose: {position: {x: 0.0, y: 0.0, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 0.0}}}}'
