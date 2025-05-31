@@ -1,4 +1,6 @@
 from setuptools import find_packages, setup
+import os
+from glob import glob
 
 package_name = 'filter_tuning'
 
@@ -10,6 +12,8 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'config'), glob('config/*')),
+        (os.path.join('share', package_name, 'launch'), glob('launch/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -21,6 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             'filter_tuning = filter_tuning.filter_tuning:main',
+            'input_control = filter_tuning.input_control:main',
         ],
     },
 )
