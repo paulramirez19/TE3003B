@@ -5,6 +5,7 @@
 #include <eigen3/Eigen/Dense>
 #include <limits>
 
+#include "sensor_fusion/observation.h"
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "nav_msgs/msg/odometry.hpp"
 #include "rclcpp/duration.hpp"
@@ -123,10 +124,6 @@ nav_msgs::msg::Odometry ExtendedKalmanFilter::Update(const Observation& observat
     const Eigen::Matrix<double, 3, 1> y = (prev_state_ - obser_state);
     ++counter_;
     const Eigen::Matrix<double, 3, 3> S = H() * prev_covariance_ * (H().transpose()) + R_;
-    RCLCPP_INFO_STREAM(logger_, S.determinant());
-    if (std::abs(S.determinant()) < kEpsilon) {
-        RCLCPP_INFO_STREAM(logger_, "counter: " << counter_ << ", prev_covariance_:\n" << prev_covariance_ << "S:\n" << S);
-    }
     const Eigen::Matrix<double, 3, 3> K = prev_covariance_ * (H().transpose()) * (S.inverse());
     prev_state_ = prev_state_ + K * y;
     const Eigen::Matrix<double, 3, 3> I = Eigen::Matrix<double, 3, 3>::Identity();

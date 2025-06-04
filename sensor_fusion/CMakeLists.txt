@@ -23,12 +23,13 @@ include_directories(SYSTEM ${Eigen_INCLUDE_DIRS})
 include_directories(include ${EIGEN3_INCLUDE_DIRS})
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
-add_executable(sensor_fusion
-  src/sensor_fusion.cpp
-  src/observation.cpp
+add_library(sensor_fusion_lib
   src/extended_kalman_filter.cpp
+  src/observation.cpp
+  src/sensor_fusion.cpp
 )
-ament_target_dependencies(sensor_fusion
+
+ament_target_dependencies(sensor_fusion_lib
   rclcpp
   geometry_msgs
   nav_msgs
@@ -38,12 +39,37 @@ ament_target_dependencies(sensor_fusion
   tf2_ros
 )
 
+target_include_directories(sensor_fusion_lib PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+)
+
+add_executable(sensor_fusion_node src/sensor_fusion_main.cpp)
+target_link_libraries(sensor_fusion_node sensor_fusion_lib)
+
 install(TARGETS
-  sensor_fusion
+  sensor_fusion_node
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
+  find_package(ament_cmake_gtest REQUIRED)
+  ament_add_gtest(${PROJECT_NAME}_test
+    test/extended_kalman_filter_test.cpp
+  )
+  target_link_libraries(${PROJECT_NAME}_test sensor_fusion_lib)
+  target_include_directories(${PROJECT_NAME}_test PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+  )
+  ament_target_dependencies(${PROJECT_NAME}_test
+    rclcpp
+    geometry_msgs
+    nav_msgs
+    sensor_msgs
+    builtin_interfaces
+    tf2
+    tf2_ros
+  )
   # the following line skips the linter which checks for copyrights
   # comment the line when a copyright and license is added to all source files
   set(ament_cmake_copyright_FOUND TRUE)

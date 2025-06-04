@@ -113,10 +113,3 @@ void SensorFusion::FusedSensorsCallback() {
 }
 
 } // namespace sensor_fusion
-
-int main(int argc, char* argv[]) {
-    rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<sensor_fusion::SensorFusion>());
-    rclcpp::shutdown();
-    return EXIT_SUCCESS;
-}
